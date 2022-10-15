@@ -1,0 +1,23 @@
+import { ratingType } from "./AnimeTypes";
+
+export interface AnimeInfo {
+    id: number,
+    name: string,
+    russian: string,
+    image: string,
+    url: string,
+    kind: string,
+    score: string,
+    status: string,
+    episodes: number,
+    episodesAired: number,
+    airedOn: Date,
+    releasedOn: Date,
+    rating: ratingType,
+    english: string[],
+    japanese: string[],
+    synonyms: string[],
+    duration: number,
+    description: string,
+    ongoing: boolean
+}
