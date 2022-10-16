@@ -26,18 +26,17 @@ describe('AnimeListService', () => {
     service.getAnimeList({ score: 8.0 }).subscribe(animeList => {
       animeList.map((anime) => expect(anime.score >= "8.0").toBeTrue());
     });
-  }))
+  }));
 
   it('SHIKIMORI API - should return animes with kind tv', waitForAsync(() => {
     service.getAnimeList({ kind: KindType.tv }).subscribe(animeList => {
       animeList.map((anime) => expect(anime.kind === "tv").toBeTrue());
     })
   }));
-  it('SHIKIMORI API - should return animes with duration S', waitForAsync(() => {
 
+  it('SHIKIMORI API - should return animes with duration S', waitForAsync(() => {
     service.getAnimeList({duration:durationType.S, limit: 3}).subscribe(animeList => {
       animeList.map((anime) => service.getAnimeById(anime.id).subscribe( (a) => expect(a.duration <= 10).toBeTrue()))
-   } );
-  }))
-
+   });
+  }));
 });

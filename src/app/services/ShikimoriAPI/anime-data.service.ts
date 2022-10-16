@@ -16,15 +16,8 @@ export class AnimeDataService {
   constructor(private httpClient: HttpClient) { }
 
   getAnimeList(params: RequestParams): Observable<AnimeFromList[]> {
-    let reqParams = new HttpParams();
-    let keys = Object.keys(params);
-    let values = Object.values(params);
-    for (let i = 0; i < keys.length; i++) {
-      reqParams = reqParams.append(keys[i].toString(), values[i]);
-    }
-
     return this.httpClient
-      .get<AnimeFromList[]>(ANIMELISTURL, {params: reqParams});
+      .get<AnimeFromList[]>(ANIMELISTURL, {params: params as HttpParams});
   }
 
   getAnimeById(id: number): Observable<AnimeInfo> {
