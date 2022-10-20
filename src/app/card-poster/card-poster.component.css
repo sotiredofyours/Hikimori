@@ -1,0 +1,16 @@
+.card {
+    padding-right: 57px;
+    width: 176px;
+    height: 316px;
+    padding-bottom: 70px;
+}
+
+.card img {
+    width: 175px;
+    height: 267px;
+}
+
+.card__kind-and-data {
+    display: flex;
+}
+

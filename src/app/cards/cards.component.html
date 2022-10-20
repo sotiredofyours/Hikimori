@@ -1,3 +1,19 @@
-<p *ngFor="let anime of animes">
-  <app-card-poster [anime]="anime"></app-card-poster>
-</p>
+<header class="header">Hikimori</header>
+<div class="main">
+        <div class="main__head">Лучшие аниме</div>
+        <div class="main__head_info">На данной странице отобраны лучшие аниме, отсортированные по рейтингу</div>
+        <div class="main__page-movements">
+            <button class="main__page-movements_back">&larr; Назад</button>
+            <div>Страницы 1 из 1</div> <!--Здесь номера страниц будут меняться-->
+            <button class="main__page-movements_forward">Вперед &rarr;</button>
+        </div>
+        <div class="main__container">
+            <div class="main__container-primary">
+                <div class="main__item" *ngFor="let anime of animes">
+                    <app-card-poster [anime]="anime"></app-card-poster>
+                </div>
+            </div>
+            <div class="main__container-navigation">
+            </div>
+        </div>
+</div>
