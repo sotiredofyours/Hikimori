@@ -8,10 +8,12 @@ import {AnimeFromList} from "../models/AnimeFromList";
 })
 export class CardPosterComponent implements OnInit {
   @Input() anime!: AnimeFromList;
+  date!:Date;
 
   constructor() {}
 
   ngOnInit(): void {
+     this.date = new Date(this.anime.aired_on)
   }
 
 }
