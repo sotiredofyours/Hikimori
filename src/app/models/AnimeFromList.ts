@@ -9,6 +9,6 @@ export interface AnimeFromList {
   status: string,
   episodes: number,
   episodesAired: number,
-  airedOn: Date,
-  releasedOn: Date,
+  aired_on: Date,
+  released_on: Date,
 }
