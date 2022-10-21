@@ -5,3 +5,9 @@ body {
     height: 1032px;
     background-color: crimson;
 }
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
