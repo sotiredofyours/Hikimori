@@ -2,7 +2,6 @@ export interface AnimeFromList {
   id: number,
   name: string,
   russian: string,
-  image: string,
   url: string,
   kind: string,
   score: string,
@@ -10,5 +9,5 @@ export interface AnimeFromList {
   episodes: number,
   episodesAired: number,
   aired_on: Date,
-  released_on: Date,
+  released_on: Date
 }
