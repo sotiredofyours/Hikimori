@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { withDisabledInitialNavigation } from '@angular/router';
 import {AnimeFromList} from "../models/AnimeFromList";
+import { KindType } from '../models/AnimeTypes';
 
 @Component({
   selector: 'app-card-poster',
@@ -9,11 +11,21 @@ import {AnimeFromList} from "../models/AnimeFromList";
 export class CardPosterComponent implements OnInit {
   @Input() anime!: AnimeFromList;
   date!:Date;
+  type!:string;
 
   constructor() {}
 
   ngOnInit(): void {
      this.date = new Date(this.anime.aired_on)
+     if (this.anime.kind == KindType.tv || this.anime.kind == KindType.tv_13
+         || this.anime.kind == KindType.tv_24
+         || this.anime.kind == KindType.tv_48 )
+        {
+            this.type = "TV Сериал"
+        }
+    else{
+        this.type = this.anime.kind.toString()
+    }
   }
 
 }
