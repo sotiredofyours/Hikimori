@@ -9,5 +9,5 @@ export interface AnimeFromList {
   episodes: number,
   episodesAired: number,
   aired_on: Date,
-  released_on: Date,
+  released_on: Date
 }
