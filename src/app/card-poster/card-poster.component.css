@@ -1,0 +1,35 @@
+.card {
+    padding-right: 57px;
+    width: 176px;
+    height: 316px;
+    padding-bottom: 70px;
+}
+
+.card img {
+    width: 175px;
+    height: 267px;
+}
+
+.card__name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card__name a {
+    text-decoration: none;
+}
+
+.card__kind-and-date {
+    display: flex;
+    width: 176px;
+    height: 22px;
+}
+
+.card__kind-and-date__k {
+    width: 130px;
+}
+
+.card__kind-and-date__d {
+    width: 46px;
+}
