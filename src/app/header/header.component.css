@@ -24,23 +24,21 @@
 
 .header__search-box {
     display: inline-flex;
-    border: 1px solid black;
-    border-radius: 30px;
-    padding: 10px;
+    padding: 9px;
 }
 
 
 .search-field {
     width: 1028px;
-    border: 0; 
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
+    border: 0;
 }
-
+/*
 .search-field:focus {
     outline: none;
 }
-
+*/
 /* Было 1
 .header__search-box input {
     width: 1028px;
@@ -50,9 +48,7 @@
 */
 .search-icon {
     background-color: white;
-    width: 35px;
-    height: 34px;
-    order: -1;
-    padding-top: 4px;
+    width: 40px;
+    height: 42px;
 }
 
