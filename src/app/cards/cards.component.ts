@@ -24,10 +24,16 @@ export class CardsComponent implements OnInit {
     this.animeDataService.getAnimeList({ order: OrderType.ranked, limit: 10, page: this.page })
       .subscribe({ next: (data: AnimeFromList[]) => this.animes = data });
   }
-  //@Fixme
+
   pageUp(): void{
-    this.ngOnInit();
-    this.router.navigate(['/animes/', ++this.page]);
-    this.ngOnInit();
+    this.router.navigate(['/animes/', ++this.page]).then(() => {
+      window.location.reload();
+    });
+  }
+
+  pageDown():void{
+    this.router.navigate(['/animes', --this.page]).then(() => {
+      window.location.reload();
+    });
   }
 }

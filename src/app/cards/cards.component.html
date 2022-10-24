@@ -2,7 +2,7 @@
     <div class="main__head">Лучшие аниме</div>
     <div class="main__head_info">На данной странице отобраны лучшие аниме, отсортированные по рейтингу</div>
     <div class="main__page-movements">
-        <button class="main__page-movements_back">&larr; Назад</button>
+        <button class="main__page-movements_back" (click)="pageDown()">&larr; Назад</button>
         <div>Страницы {{page}} из 1878 </div> <!--Здесь номера страниц будут меняться-->
         <button class="main__page-movements_forward" (click)="pageUp()">Вперед &rarr;</button>
     </div>
