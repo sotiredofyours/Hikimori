@@ -21,7 +21,7 @@ export class CardsComponent implements OnInit {
   }
 
   getAnimeFromList(): void {
-    this.animeDataService.getAnimeList({ order: OrderType.ranked, limit: 10, page: this.page })
+    this.animeDataService.getAnimeList({ order: OrderType.ranked, limit: 50, page: this.page })
       .subscribe({ next: (data: AnimeFromList[]) => this.animes = data });
   }
 
