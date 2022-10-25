@@ -1,6 +1,6 @@
 .main {
     width: 1920px;
-    height: 1000px;
+    height: 100%;
     background-color: #FFFFFF;
 }
 
@@ -83,22 +83,22 @@
 }
 
 .main__page-movements_back {
-    border-style: none; 
+    border-style: none;
     width: 94px;
     height: 20px;
     font-size: 16px;
     font-weight: 400;
     cursor: pointer;
-    
+
 }
 
 .main__page-movements div {
-    width: 140px;
+    width: 198px;
     height: 22px;
 }
 
 .main__page-movements_forward {
-    border-style: none; 
+    border-style: none;
     margin-top: 1px;
     display: flex;
     width: 94px;

@@ -1,13 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     font-family: 'Merriweather', serif;
-    width: 1920px;
-    height: 1032px;
-    background-color: crimson;
+    background-color: silver;
 }
 
 html, body {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
+}
+
+a {
+    color: brown;
 }

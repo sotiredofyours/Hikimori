@@ -20,12 +20,13 @@ export class CardPosterComponent implements OnInit {
      if (this.anime.kind == KindType.tv || this.anime.kind == KindType.tv_13
          || this.anime.kind == KindType.tv_24
          || this.anime.kind == KindType.tv_48 )
-        {
-            this.type = "TV Сериал"
-        }
+            this.type = "TV Сериал";
     else{
         this.type = this.anime.kind.toString()
     }
+    if (this.anime.kind == KindType.movie)
+				        this.type = "Фильм";
   }
+
 
 }
