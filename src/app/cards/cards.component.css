@@ -2,6 +2,7 @@
     width: 1920px;
     height: 100%;
     background-color: #FFFFFF;
+    overflow: auto;
 }
 
 .main__container {
@@ -16,7 +17,7 @@
 .main__container-primary {
     width: 1200px;
     height: 726px;
-    padding-right: 1px;
+    /*padding-right: 1px;*/
 }
 
 .main__item {
@@ -94,17 +95,19 @@
 
 .main__page-movements div {
     width: 198px;
-    height: 22px;
+    height: 20px;
+    text-align: center;
+    margin: 0 5px;
 }
 
 .main__page-movements_forward {
     border-style: none;
-    margin-top: 1px;
-    display: flex;
     width: 94px;
     height: 20px;
     font-size: 16px;
     font-weight: 400;
+    margin-top: 1px;
+    text-align: center;
     cursor: pointer;
 }
 
