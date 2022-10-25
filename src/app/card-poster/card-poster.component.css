@@ -18,12 +18,14 @@
 
 .card__name a {
     text-decoration: none;
+    font-weight: 600;
 }
 
 .card__kind-and-date {
     display: flex;
     width: 176px;
     height: 22px;
+    font-size: 14px;
 }
 
 .card__kind-and-date__k {
