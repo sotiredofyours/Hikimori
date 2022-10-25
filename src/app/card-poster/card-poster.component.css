@@ -8,6 +8,7 @@
 .card img {
     width: 175px;
     height: 267px;
+    border-radius: 7%;
 }
 
 .card__name {

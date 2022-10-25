@@ -32,6 +32,7 @@
     width: 300px;
     height: 726px;
     background: #706d6de3;
+    border-radius: 5%;
 }
 
 .main__container-navigation__block {
@@ -55,6 +56,8 @@
     text-align: center;
     background-color: rgb(56, 55, 55);
     margin-bottom: 5px;
+    border-radius: 8%;
+    padding: 4px 0;
 }
 
 .main__container-navigation__block_list ul {
