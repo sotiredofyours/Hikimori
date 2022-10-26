@@ -23,6 +23,11 @@
     margin-left: 7px;
 }
 
+.header__name a {
+  text-decoration: none;
+  color: #EBEBEB;
+}
+
 .header__search-box {
     display: inline-flex;
     padding: 9px;

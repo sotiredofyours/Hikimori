@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CardsComponent } from './cards/cards.component';
 
 const routes: Routes = [
-  {path:"animes/:id", component:CardsComponent}
+  {path:"animes/:id", component:CardsComponent},
+  {path:'', redirectTo:"animes/1", pathMatch:'full'}
 ];
 
 @NgModule({

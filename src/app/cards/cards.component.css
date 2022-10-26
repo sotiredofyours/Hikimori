@@ -65,6 +65,10 @@
   margin-left: 10px;
 }
 
+.sublist {
+  margin-left: 15px;
+}
+
 .genres {
   display:block;
   cursor:pointer;
@@ -75,6 +79,7 @@
   display:none;
 }
 
+/*TODO: Желательно сделать выпадающее меню по клику*/
 .genres:hover ul {
   display:block;
   /*position:absolute;*/
@@ -86,6 +91,7 @@
   z-index:2;
   width:100%;
 }
+
 
 .indent_between {
   margin-bottom: 20px;
@@ -133,7 +139,7 @@
 }
 
 .main__page-movements div {
-  width: 198px;
+  width: 120px;
   height: 20px;
   text-align: center;
   margin: 0 5px;

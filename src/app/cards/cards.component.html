@@ -7,7 +7,7 @@
     <button class="main__page-movements_back" (click)="pageDown()">
       &larr; Назад
     </button>
-    <div>Страницы {{ page }} из 1878</div>
+    <div>Страница {{ page }}</div>
     <!--Здесь номера страниц будут меняться-->
     <button class="main__page-movements_forward" (click)="pageUp()">
       Вперед &rarr;
@@ -46,6 +46,11 @@
         <div class="main__container-navigation__block_list">
           <ul>
             <li><input type="checkbox">TV Сериал</li>
+              <ul>
+                <li class="sublist"><input type="checkbox">Короткие</li>
+                <li class="sublist"><input type="checkbox">Средние</li>
+                <li class="sublist"><input type="checkbox">Длинные</li>
+              </ul>
             <li><input type="checkbox">Фильм</li>
             <li><input type="checkbox">OVA</li>
             <li><input type="checkbox">ONA</li>
@@ -139,52 +144,6 @@
             <li><input type="checkbox">Хентай</li>
             <li><input type="checkbox">Яой</li>
             <li><input type="checkbox">Юри</li>
-          </ul>
-        </div>
-      </div>
-      <div class="main__container-navigation__block">
-        <div class="main__container-navigation__block_title">Лицензировано</div>
-        <div class="main__container-navigation__block_list genres">Показать список
-          <ul>
-            <li><input type="checkbox">All Media Company</li>
-            <li><input type="checkbox">CLS Media</li>
-            <li><input type="checkbox">CP Digital</li>
-            <li><input type="checkbox">Capella Film</li>
-            <li><input type="checkbox">Cinema Prestige</li>
-            <li><input type="checkbox">Crunchyroll</li>
-            <li><input type="checkbox">Dentsu</li>
-            <li><input type="checkbox">MC Entertainment</li>
-            <li><input type="checkbox">Netflix</li>
-            <li><input type="checkbox">RUSCICO</li>
-            <li><input type="checkbox">Reanimedia</li>
-            <li><input type="checkbox">Wakanim</li>
-            <li><input type="checkbox">XL Media</li>
-            <li><input type="checkbox">Вольга</li>
-            <li><input type="checkbox">Мега-Аниме</li>
-            <li><input type="checkbox">Пионер</li>
-            <li><input type="checkbox">Ракета Релизинг</li>
-            <li><input type="checkbox">Русский Репортаж</li>
-            <li><input type="checkbox">Синема Галэкси</li>
-            <li class="indent_between"><input type="checkbox">Экспонента</li>
-            <li><input type="checkbox">2x2</li>
-            <li><input type="checkbox">Cinemaus Studio</li>
-            <li><input type="checkbox">MEGOGO Distribution</li>
-            <li><input type="checkbox">Magic Film Company</li>
-            <li><input type="checkbox">RVISION STUDIO</li>
-            <li><input type="checkbox">Ten Letters</li>
-            <li><input type="checkbox">World Pictures</li>
-            <li><input type="checkbox">YouTube</li>
-            <li><input type="checkbox">AKM</li>
-            <li><input type="checkbox">ВГТРК</li>
-            <li><input type="checkbox">Каскад фильм</li>
-            <li><input type="checkbox">Кинологистика</li>
-            <li><input type="checkbox">Кинолэнд</li>
-            <li><input type="checkbox">Люксор</li>
-            <li><input type="checkbox">Мосфильм</li>
-            <li><input type="checkbox">Наше Кино</li>
-            <li><input type="checkbox">Премиум Фильм</li>
-            <li><input type="checkbox">Русский фильм</li>
-            <li><input type="checkbox">Централ Партнершип</li>
           </ul>
         </div>
       </div>
