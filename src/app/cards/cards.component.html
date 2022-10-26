@@ -1,39 +1,193 @@
 <div class="main">
-    <div class="main__head">Лучшие аниме</div>
-    <div class="main__head_info">На данной странице отобраны лучшие аниме, отсортированные по рейтингу</div>
-    <div class="main__page-movements">
-        <button class="main__page-movements_back" (click)="pageDown()">&larr; Назад</button>
-        <div>Страницы {{page}} из 1878 </div> <!--Здесь номера страниц будут меняться-->
-        <button class="main__page-movements_forward" (click)="pageUp()">Вперед &rarr;</button>
+  <div class="main__head">Лучшие аниме</div>
+  <div class="main__head_info">
+    На данной странице отобраны лучшие аниме, отсортированные по рейтингу
+  </div>
+  <div class="main__page-movements">
+    <button class="main__page-movements_back" (click)="pageDown()">
+      &larr; Назад
+    </button>
+    <div>Страницы {{ page }} из 1878</div>
+    <!--Здесь номера страниц будут меняться-->
+    <button class="main__page-movements_forward" (click)="pageUp()">
+      Вперед &rarr;
+    </button>
+  </div>
+  <div class="main__container">
+    <div class="main__container-primary">
+      <div class="main__item" *ngFor="let anime of animes">
+        <app-card-poster [anime]="anime"></app-card-poster>
+      </div>
     </div>
-    <div class="main__container">
-        <div class="main__container-primary">
-            <div class="main__item" *ngFor="let anime of animes">
-                <app-card-poster [anime]="anime"></app-card-poster>
-            </div>
+    <div class="main__container-navigation">
+      <!--<div class="main__container-navigation__block">
+								<div class="main__container-navigation__block_title">Рекомендации</div>
+								<div class="main__container-navigation__block_list">
+										<ul>
+												<li><a href="kk">Избранное</a></li>
+												<li><a href="kk">От сообщества</a></li>
+												<li><a href="kk">Персонализированные</a></li>
+										</ul>
+								</div>
+						</div>-->
+      <div class="main__container-navigation__block">
+        <div class="main__container-navigation__block_title">Статус</div>
+        <div class="main__container-navigation__block_list">
+          <ul>
+            <li><input type="checkbox">Анонсировано</li>
+            <li><input type="checkbox">Сейчас выходит</li>
+            <li><input type="checkbox">Вышедшее</li>
+            <li><input type="checkbox">Недавно вышедшее</li>
+          </ul>
         </div>
-        <div class="main__container-navigation">
-            <div class="main__container-navigation__block">
-                <div class="main__container-navigation__block_title">Рекомендации</div>
-                <div class="main__container-navigation__block_list">
-                    <ul>
-                        <li><a href="kk">Избранное</a></li>
-                        <li><a href="kk">От сообщества</a></li>
-                        <li><a href="kk">Персонализированные</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="main__container-navigation__block">
-                <div class="main__container-navigation__block_title">Статус</div>
-            <div class="main__container-navigation__block_list">
-                    <ul>
-                        <li><input type="checkbox">Анонсировано</li>
-                        <li><input type="checkbox">Сейчас выходит</li>
-                        <li><input type="checkbox">Вышедшее</li>
-                        <li><input type="checkbox">Недавно вышедшее</li>
-                    </ul>
-                </div>
-            </div>
+      </div>
+      <div class="main__container-navigation__block">
+        <div class="main__container-navigation__block_title">Тип</div>
+        <div class="main__container-navigation__block_list">
+          <ul>
+            <li><input type="checkbox">TV Сериал</li>
+            <li><input type="checkbox">Фильм</li>
+            <li><input type="checkbox">OVA</li>
+            <li><input type="checkbox">ONA</li>
+            <li><input type="checkbox">Спешл</li>
+            <li><input type="checkbox">Клип</li>
+          </ul>
         </div>
+      </div>
+      <div class="main__container-navigation__block">
+        <div class="main__container-navigation__block_title">Сортировка</div>
+        <div class="main__container-navigation__block_list">
+          <ul>
+            <li><input type="checkbox">По рейтингу</li>
+            <li><input type="checkbox">По популярности</li>
+            <li><input type="checkbox">По алфавиту</li>
+            <li><input type="checkbox">По дате выхода</li>
+            <li><input type="checkbox">Случайно</li>
+            <li><input type="checkbox">По ID</li>
+          </ul>
+        </div>
+      </div>
+      <div class="main__container-navigation__block">
+        <div class="main__container-navigation__block_title">Оценка</div>
+        <div class="main__container-navigation__block_list">
+          <ul>
+            <li><input type="checkbox">8+</li>
+            <li><input type="checkbox">7+</li>
+            <li><input type="checkbox">6+</li>
+          </ul>
+        </div>
+      </div>
+      <div class="main__container-navigation__block">
+        <div class="main__container-navigation__block_title">Рейтинг</div>
+        <div class="main__container-navigation__block_list">
+          <ul>
+            <li><input type="checkbox">G</li>
+            <li><input type="checkbox">PG</li>
+            <li><input type="checkbox">R-17</li>
+            <li><input type="checkbox">R+</li>
+            <li><input type="checkbox">Rx</li>
+          </ul>
+        </div>
+      </div>
+      <div class="main__container-navigation__block">
+        <div class="main__container-navigation__block_title">Жанры</div>
+        <div class="main__container-navigation__block_list genres">Показать жанры
+          <ul>
+            <li><input type="checkbox">Сёнен</li>
+            <li><input type="checkbox">Сёнен-ай</li>
+            <li class="indent_between"><input type="checkbox">Сэйнэн</li>
+            <li><input type="checkbox">Сёдзё</li>
+            <li><input type="checkbox">Сёдзё-ай</li>
+            <li class="indent_between"><input type="checkbox">Дзёсей</li>
+            <li><input type="checkbox">Комедия</li>
+            <li><input type="checkbox">Романтика</li>
+            <li class="indent_between"><input type="checkbox">Школа</li>
+            <li><input type="checkbox">Безумие</li>
+            <li><input type="checkbox">Боевые искусства</li>
+            <li><input type="checkbox">Вампиры</li>
+            <li><input type="checkbox">Военное</li>
+            <li><input type="checkbox">Гарем</li>
+            <li><input type="checkbox">Гурман</li>
+            <li><input type="checkbox">Демоны</li>
+            <li><input type="checkbox">Детектив</li>
+            <li><input type="checkbox">Детское</li>
+            <li><input type="checkbox">Драма</li>
+            <li><input type="checkbox">Игры</li>
+            <li><input type="checkbox">Исторический</li>
+            <li><input type="checkbox">Космос</li>
+            <li><input type="checkbox">Магия</li>
+            <li><input type="checkbox">Машины</li>
+            <li><input type="checkbox">Меха</li>
+            <li><input type="checkbox">Музыка</li>
+            <li><input type="checkbox">Пародия</li>
+            <li><input type="checkbox">Повседневность</li>
+            <li><input type="checkbox">Полиция</li>
+            <li><input type="checkbox">Приключения</li>
+            <li><input type="checkbox">Психологическое</li>
+            <li><input type="checkbox">Работа</li>
+            <li><input type="checkbox">Самураи</li>
+            <li><input type="checkbox">Сверхъестественное</li>
+            <li><input type="checkbox">Спорт</li>
+            <li><input type="checkbox">Супер сила</li>
+            <li><input type="checkbox">Ужасы</li>
+            <li><input type="checkbox">Фантастика</li>
+            <li><input type="checkbox">Фэнтези</li>
+            <li><input type="checkbox">Экшен</li>
+            <li><input type="checkbox">Этти</li>
+            <li class="indent_between"><input type="checkbox">Триллер</li>
+            <li><input type="checkbox">Эротика</li>
+            <li><input type="checkbox">Хентай</li>
+            <li><input type="checkbox">Яой</li>
+            <li><input type="checkbox">Юри</li>
+          </ul>
+        </div>
+      </div>
+      <div class="main__container-navigation__block">
+        <div class="main__container-navigation__block_title">Лицензировано</div>
+        <div class="main__container-navigation__block_list genres">Показать список
+          <ul>
+            <li><input type="checkbox">All Media Company</li>
+            <li><input type="checkbox">CLS Media</li>
+            <li><input type="checkbox">CP Digital</li>
+            <li><input type="checkbox">Capella Film</li>
+            <li><input type="checkbox">Cinema Prestige</li>
+            <li><input type="checkbox">Crunchyroll</li>
+            <li><input type="checkbox">Dentsu</li>
+            <li><input type="checkbox">MC Entertainment</li>
+            <li><input type="checkbox">Netflix</li>
+            <li><input type="checkbox">RUSCICO</li>
+            <li><input type="checkbox">Reanimedia</li>
+            <li><input type="checkbox">Wakanim</li>
+            <li><input type="checkbox">XL Media</li>
+            <li><input type="checkbox">Вольга</li>
+            <li><input type="checkbox">Мега-Аниме</li>
+            <li><input type="checkbox">Пионер</li>
+            <li><input type="checkbox">Ракета Релизинг</li>
+            <li><input type="checkbox">Русский Репортаж</li>
+            <li><input type="checkbox">Синема Галэкси</li>
+            <li class="indent_between"><input type="checkbox">Экспонента</li>
+            <li><input type="checkbox">2x2</li>
+            <li><input type="checkbox">Cinemaus Studio</li>
+            <li><input type="checkbox">MEGOGO Distribution</li>
+            <li><input type="checkbox">Magic Film Company</li>
+            <li><input type="checkbox">RVISION STUDIO</li>
+            <li><input type="checkbox">Ten Letters</li>
+            <li><input type="checkbox">World Pictures</li>
+            <li><input type="checkbox">YouTube</li>
+            <li><input type="checkbox">AKM</li>
+            <li><input type="checkbox">ВГТРК</li>
+            <li><input type="checkbox">Каскад фильм</li>
+            <li><input type="checkbox">Кинологистика</li>
+            <li><input type="checkbox">Кинолэнд</li>
+            <li><input type="checkbox">Люксор</li>
+            <li><input type="checkbox">Мосфильм</li>
+            <li><input type="checkbox">Наше Кино</li>
+            <li><input type="checkbox">Премиум Фильм</li>
+            <li><input type="checkbox">Русский фильм</li>
+            <li><input type="checkbox">Централ Партнершип</li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
