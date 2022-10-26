@@ -1,11 +1,11 @@
-import { durationType, KindType, OrderType, ratingType, statusType } from "./AnimeTypes";
+import { durationType, KindType, OrderType, ratingType } from "./AnimeTypes";
 
 export interface RequestParams{
     page?: number,
     limit?: number,
     order?: OrderType,
     kind?: KindType,
-    status?: statusType,
+    status?: string,
     season?: string,
     score?: number,
     duration?: durationType

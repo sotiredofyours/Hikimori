@@ -7,6 +7,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { CardPosterComponent } from './card-poster/card-poster.component';
 import { CardsComponent } from './cards/cards.component';
 import { HeaderComponent } from './header/header.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -15,13 +16,14 @@ import { HeaderComponent } from './header/header.component';
     CardsComponent,
     HeaderComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [ HttpClientModule ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
 
