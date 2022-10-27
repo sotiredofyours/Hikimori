@@ -1,39 +1,52 @@
-import { Component, OnInit } from '@angular/core';
-import { AnimeFromList } from "../models/AnimeFromList";
-import { AnimeDataService } from "../services/ShikimoriAPI/anime-data.service";
-import { OrderType } from "../models/AnimeTypes";
-import { ActivatedRoute, Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {AnimeFromList} from "../models/AnimeFromList";
+import {AnimeDataService} from "../services/ShikimoriAPI/anime-data.service";
+import {OrderType} from "../models/AnimeTypes";
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-cards',
-  templateUrl: './cards.component.html',
-  styleUrls: ['./cards.component.css']
+	selector: 'app-cards',
+	templateUrl: './cards.component.html',
+	styleUrls: ['./cards.component.css']
 })
+
+
 export class CardsComponent implements OnInit {
-  animes: AnimeFromList[] = [];
-  page!: number;
+  titleName: string = 'Лучшие аниме';
+	animes: AnimeFromList[] = [];
+  nextPage: AnimeFromList[] = [];
+	page!: number;
 
-  constructor(private animeDataService: AnimeDataService, private route: ActivatedRoute, private router:Router) { }
+  isAnons:boolean = false;
+  isOngoing:boolean = false;
+  isReleased:boolean = false;
 
-  ngOnInit(): void {
-    this.page = Number(this.route.snapshot.paramMap.get('id'));
-    this.getAnimeFromList();
-  }
 
-  getAnimeFromList(): void {
-    this.animeDataService.getAnimeList({ order: OrderType.ranked, limit: 100, page: this.page })
-      .subscribe({ next: (data: AnimeFromList[]) => this.animes = data });
-  }
+	constructor(private animeDataService: AnimeDataService, private route: ActivatedRoute, private router:Router) { }
 
-  pageUp(): void{
-    this.router.navigate(['/animes/', ++this.page]).then(() => {
-      window.location.reload();
-    });
-  }
+	ngOnInit(): void {
+		this.page = Number(this.route.snapshot.paramMap.get('page'));
+		this.getAnimeFromList();
+    this.router.events.subscribe(val =>{
+      if (val instanceof NavigationEnd){
+        this.getAnimeFromList();
+      }
+    })
+	}
 
-  pageDown():void{
-    this.router.navigate(['/animes', --this.page]).then(() => {
-      window.location.reload();
-    });
-  }
+	getAnimeFromList(): void {
+		this.animeDataService.getAnimeList({limit:50, order:OrderType.ranked, page:this.page})
+			.subscribe({ next: (data: AnimeFromList[]) => this.animes = data });
+    this.animeDataService.getAnimeList({limit:50, order:OrderType.ranked, page:this.page+1})
+      .subscribe({next: (data: AnimeFromList[]) => this.nextPage = data});
+	}
+
+	pageUp(): void{
+		this.router.navigate(['/animes', ++this.page]);
+	}
+
+	pageDown():void{
+		this.router.navigate(['/animes', --this.page]);
+	}
+
 }

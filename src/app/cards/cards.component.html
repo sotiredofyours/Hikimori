@@ -1,15 +1,15 @@
 <div class="main">
-  <div class="main__head">Лучшие аниме</div>
+  <div class="main__head">{{titleName}}</div>
   <div class="main__head_info">
     На данной странице отобраны лучшие аниме, отсортированные по рейтингу
   </div>
   <div class="main__page-movements">
-    <button class="main__page-movements_back" (click)="pageDown()">
+    <button class="main__page-movements_back" (click)="pageDown()" [disabled]="this.page===1">
       &larr; Назад
     </button>
-    <div>Страница {{ page }}</div>
+    <div>Страница {{ this.page }}</div>
     <!--Здесь номера страниц будут меняться-->
-    <button class="main__page-movements_forward" (click)="pageUp()">
+    <button class="main__page-movements_forward" (click)="pageUp()" [disabled]="nextPage.length===0">
       Вперед &rarr;
     </button>
   </div>
@@ -34,10 +34,9 @@
         <div class="main__container-navigation__block_title">Статус</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><input type="checkbox" />Анонсировано</li>
-            <li><input type="checkbox" />Сейчас выходит</li>
-            <li><input type="checkbox" />Вышедшее</li>
-            <li><input type="checkbox" />Недавно вышедшее</li>
+            <li><input type="checkbox" [(ngModel)]="isAnons">Анонсировано</li>
+            <li><input type="checkbox" [(ngModel)]="isOngoing" >Сейчас выходит</li>
+            <li><input type="checkbox" [(ngModel)]="isReleased">Вышедшее</li>
           </ul>
         </div>
       </div>
