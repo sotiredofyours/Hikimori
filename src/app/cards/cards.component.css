@@ -65,6 +65,15 @@
   margin-left: 10px;
 }
 
+.main__container-navigation__block_list a {
+  margin-left: 10px;
+  color: black;
+}
+
+.main__container-navigation__block_list ul li:hover {
+  background-color: rgb(212, 212, 212);
+}
+
 .sublist {
   margin-left: 15px;
 }
