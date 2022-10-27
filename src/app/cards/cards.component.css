@@ -69,20 +69,16 @@
   margin-left: 15px;
 }
 
+
 .genres {
-  display:block;
+  margin-left: 10px;
   cursor:pointer;
-  position: relative;
 }
 
-.genres ul {
-  display:none;
-}
-
-/*TODO: Желательно сделать выпадающее меню по клику*/
+/* Чтобы блок выскакивал при наводке мыши
 .genres:hover ul {
   display:block;
-  /*position:absolute;*/
+  /*position:absolute;
   left:0;
   top:100%;
   padding:0;
@@ -91,7 +87,7 @@
   z-index:2;
   width:100%;
 }
-
+*/
 
 .indent_between {
   margin-bottom: 20px;

@@ -29,7 +29,10 @@ body::-webkit-scrollbar-track {
   background-color: #a5a5ac;
 }
 
-
 a {
     color: brown;
+}
+
+ul {
+  margin: 0;
 }
