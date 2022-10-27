@@ -8,7 +8,6 @@
       &larr; Назад
     </button>
     <div>Страница {{ this.page }}</div>
-    <!--Здесь номера страниц будут меняться-->
     <button class="main__page-movements_forward" (click)="pageUp()" [disabled]="nextPage.length===0">
       Вперед &rarr;
     </button>
@@ -20,23 +19,13 @@
       </div>
     </div>
     <div class="main__container-navigation">
-      <!--<div class="main__container-navigation__block">
-								<div class="main__container-navigation__block_title">Рекомендации</div>
-								<div class="main__container-navigation__block_list">
-										<ul>
-												<li><a href="kk">Избранное</a></li>
-												<li><a href="kk">От сообщества</a></li>
-												<li><a href="kk">Персонализированные</a></li>
-										</ul>
-								</div>
-						</div>-->
       <div class="main__container-navigation__block">
         <div class="main__container-navigation__block_title">Статус</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><input type="checkbox" [(ngModel)]="isAnons">Анонсировано</li>
-            <li><input type="checkbox" [(ngModel)]="isOngoing" >Сейчас выходит</li>
-            <li><input type="checkbox" [(ngModel)]="isReleased">Вышедшее</li>
+            <li><input type="checkbox">Анонсировано</li>
+            <li><input type="checkbox">Сейчас выходит</li>
+            <li><input type="checkbox">Вышедшее</li>
           </ul>
         </div>
       </div>
@@ -147,3 +136,6 @@
           </ul>
         </details>
       </div>
+    </div>
+  </div>
+</div>
