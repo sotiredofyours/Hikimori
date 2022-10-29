@@ -23,9 +23,9 @@
         <div class="main__container-navigation__block_title">Статус</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><input type="checkbox">Анонсировано</li>
-            <li><input type="checkbox">Сейчас выходит</li>
-            <li><input type="checkbox">Вышедшее</li>
+            <li><input type="checkbox" (change)="isAnons = !isAnons; addFilters()" [checked]="isAnons">Анонсировано</li>
+            <li><input type="checkbox" (change)="isOngoing = !isOngoing; addFilters()" [checked]="isOngoing">Сейчас выходит</li>
+            <li><input type="checkbox" (change)="isReleased = !isReleased; addFilters()" [checked]="isReleased">Вышедшее</li>
           </ul>
         </div>
       </div>
@@ -33,17 +33,17 @@
         <div class="main__container-navigation__block_title">Тип</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><input type="checkbox" />TV Сериал</li>
+            <li><input type="checkbox" (change)="isTV = !isTV; addFilters()" [checked]="isTV" />TV Сериал</li>
             <ul>
-              <li class="sublist"><input type="checkbox" />Короткие</li>
+              <li class="sublist"><input type="checkbox" (change)="isTV13 = !isTV13; addFilters()" [checked]="isTV13"/>Короткие</li>
               <li class="sublist"><input type="checkbox" />Средние</li>
               <li class="sublist"><input type="checkbox" />Длинные</li>
             </ul>
-            <li><input type="checkbox" />Фильм</li>
-            <li><input type="checkbox" />OVA</li>
-            <li><input type="checkbox" />ONA</li>
-            <li><input type="checkbox" />Спешл</li>
-            <li><input type="checkbox" />Клип</li>
+            <li><input type="checkbox" (change)="isMovie = !isMovie; addFilters()" [checked]="isMovie"/>Фильм</li>
+            <li><input type="checkbox" (change)="isOva = !isOva; addFilters()" [checked]="isOva" />OVA</li>
+            <li><input type="checkbox" (change)="isOna = !isOna; addFilters()" [checked]="isOna"/>ONA</li>
+            <li><input type="checkbox" (change)="isSpecial = !isSpecial; addFilters()" [checked]="isSpecial"/>Спешл</li>
+            <li><input type="checkbox" (change)="isMusic = !isMusic; addFilters()" [checked]="isMusic"/>Клип</li>
           </ul>
         </div>
       </div>

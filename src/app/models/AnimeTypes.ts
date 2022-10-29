@@ -20,17 +20,17 @@ export const enum KindType {
     tv_24 = "tv_24",
     tv_48 = "tv_48"
 }
-export const enum statusType {
+export const enum StatusType {
     anons = "anons",
     ongoing = "ongoing",
     released = "released"
 }
-export const enum durationType{
+export const enum DurationType{
     S = "S",
     D = "D",
     F = "F"
 }
-export const enum ratingType{
+export const enum RatingType{
     none = "none",
     g = "g",
     pg = "pg",
