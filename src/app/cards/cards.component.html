@@ -8,7 +8,6 @@
       &larr; Назад
     </button>
     <div>Страница {{ this.page }}</div>
-    <!--Здесь номера страниц будут меняться-->
     <button class="main__page-movements_forward" (click)="pageUp()" [disabled]="nextPage.length===0">
       Вперед &rarr;
     </button>
@@ -20,23 +19,13 @@
       </div>
     </div>
     <div class="main__container-navigation">
-      <!--<div class="main__container-navigation__block">
-								<div class="main__container-navigation__block_title">Рекомендации</div>
-								<div class="main__container-navigation__block_list">
-										<ul>
-												<li><a href="kk">Избранное</a></li>
-												<li><a href="kk">От сообщества</a></li>
-												<li><a href="kk">Персонализированные</a></li>
-										</ul>
-								</div>
-						</div>-->
       <div class="main__container-navigation__block">
         <div class="main__container-navigation__block_title">Статус</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><label for="announce1"><input type="checkbox" id="announce1" [(ngModel)]="isAnons">Анонсировано</label></li>
-            <li><label for="announce2"><input type="checkbox" id="announce2" [(ngModel)]="isOngoing" >Сейчас выходит</label></li>
-            <li><label for="announce3"><input type="checkbox" id="announce3" [(ngModel)]="isReleased">Вышедшее</label></li>
+            <li><label for="announce1"><input type="checkbox" id="announce1">Анонсировано</label></li>
+            <li><label for="announce2"><input type="checkbox" id="announce2">Сейчас выходит</label></li>
+            <li><label for="announce3"><input type="checkbox" id="announce3">Вышедшее</label></li>
           </ul>
         </div>
       </div>
@@ -147,3 +136,6 @@
           </ul>
         </details>
       </div>
+    </div>
+  </div>
+</div>
