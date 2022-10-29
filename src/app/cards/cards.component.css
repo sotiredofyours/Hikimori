@@ -58,6 +58,8 @@
 
 .main__container-navigation__block_list ul {
   list-style: none;
+  cursor: pointer;
+
 }
 
 .main__container-navigation__block_list {
@@ -74,10 +76,14 @@
   background-color: rgb(212, 212, 212);
 }
 
+label {
+  display: block;
+  cursor: pointer;
+}
+
 .sublist {
   margin-left: 15px;
 }
-
 
 .genres {
   margin-left: 10px;

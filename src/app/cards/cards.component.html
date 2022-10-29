@@ -34,9 +34,9 @@
         <div class="main__container-navigation__block_title">Статус</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><input type="checkbox" [(ngModel)]="isAnons">Анонсировано</li>
-            <li><input type="checkbox" [(ngModel)]="isOngoing" >Сейчас выходит</li>
-            <li><input type="checkbox" [(ngModel)]="isReleased">Вышедшее</li>
+            <li><label for="announce1"><input type="checkbox" id="announce1" [(ngModel)]="isAnons">Анонсировано</label></li>
+            <li><label for="announce2"><input type="checkbox" id="announce2" [(ngModel)]="isOngoing" >Сейчас выходит</label></li>
+            <li><label for="announce3"><input type="checkbox" id="announce3" [(ngModel)]="isReleased">Вышедшее</label></li>
           </ul>
         </div>
       </div>
@@ -44,17 +44,17 @@
         <div class="main__container-navigation__block_title">Тип</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><input type="checkbox" />TV Сериал</li>
+            <li><label for="kind1"><input type="checkbox" id="kind1">TV Сериал</label></li>
             <ul>
-              <li class="sublist"><input type="checkbox" />Короткие</li>
-              <li class="sublist"><input type="checkbox" />Средние</li>
-              <li class="sublist"><input type="checkbox" />Длинные</li>
+              <li class="sublist"><label for="kind__series1"><input type="checkbox" id="kind__series1">Короткие</label></li>
+              <li class="sublist"><label for="kind__series2"><input type="checkbox" id="kind__series2">Средние</label></li>
+              <li class="sublist"><label for="kind__series3"><input type="checkbox" id="kind__series3">Длинные</label></li>
             </ul>
-            <li><input type="checkbox" />Фильм</li>
-            <li><input type="checkbox" />OVA</li>
-            <li><input type="checkbox" />ONA</li>
-            <li><input type="checkbox" />Спешл</li>
-            <li><input type="checkbox" />Клип</li>
+            <li><label for="kind2"><input type="checkbox" id="kind2">Фильм</label></li>
+            <li><label for="kind3"><input type="checkbox" id="kind3">OVA</label></li>
+            <li><label for="kind4"><input type="checkbox" id="kind4">ONA</label></li>
+            <li><label for="kind5"><input type="checkbox" id="kind5">Спешл</label></li>
+            <li><label for="kind6"><input type="checkbox" id="kind6">Клип</label></li>
           </ul>
         </div>
       </div>
@@ -75,9 +75,9 @@
         <div class="main__container-navigation__block_title">Оценка</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><input type="checkbox" />8+</li>
-            <li><input type="checkbox" />7+</li>
-            <li><input type="checkbox" />6+</li>
+            <li><label for="mark1"><input type="checkbox" id="mark1">8+</label></li>
+            <li><label for="mark2"><input type="checkbox" id="mark2">7+</label></li>
+            <li><label for="mark3"><input type="checkbox" id="mark3">6+</label></li>
           </ul>
         </div>
       </div>
@@ -85,11 +85,11 @@
         <div class="main__container-navigation__block_title">Рейтинг</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><input type="checkbox" />G</li>
-            <li><input type="checkbox" />PG</li>
-            <li><input type="checkbox" />R-17</li>
-            <li><input type="checkbox" />R+</li>
-            <li><input type="checkbox" />Rx</li>
+            <li><label for="rank1"><input type="checkbox" id="rank1">G</label></li>
+            <li><label for="rank2"><input type="checkbox" id="rank2">PG</label></li>
+            <li><label for="rank3"><input type="checkbox" id="rank3">R-17</label></li>
+            <li><label for="rank4"><input type="checkbox" id="rank4">R+</label></li>
+            <li><label for="rank5"><input type="checkbox" id="rank5">Rx</label></li>
           </ul>
         </div>
       </div>
@@ -98,52 +98,52 @@
         <details class="main__container-navigation__block_list">
           <summary class="genres">Показать жанры</summary>
           <ul>
-            <li><input type="checkbox">Сёнен</li>
-            <li><input type="checkbox">Сёнен-ай</li>
-            <li class="indent_between"><input type="checkbox">Сэйнэн</li>
-            <li><input type="checkbox">Сёдзё</li>
-            <li><input type="checkbox">Сёдзё-ай</li>
-            <li class="indent_between"><input type="checkbox">Дзёсей</li>
-            <li><input type="checkbox">Комедия</li>
-            <li><input type="checkbox">Романтика</li>
-            <li class="indent_between"><input type="checkbox">Школа</li>
-            <li><input type="checkbox">Безумие</li>
-            <li><input type="checkbox">Боевые искусства</li>
-            <li><input type="checkbox">Вампиры</li>
-            <li><input type="checkbox">Военное</li>
-            <li><input type="checkbox">Гарем</li>
-            <li><input type="checkbox">Гурман</li>
-            <li><input type="checkbox">Демоны</li>
-            <li><input type="checkbox">Детектив</li>
-            <li><input type="checkbox">Детское</li>
-            <li><input type="checkbox">Драма</li>
-            <li><input type="checkbox">Игры</li>
-            <li><input type="checkbox">Исторический</li>
-            <li><input type="checkbox">Космос</li>
-            <li><input type="checkbox">Магия</li>
-            <li><input type="checkbox">Машины</li>
-            <li><input type="checkbox">Меха</li>
-            <li><input type="checkbox">Музыка</li>
-            <li><input type="checkbox">Пародия</li>
-            <li><input type="checkbox">Повседневность</li>
-            <li><input type="checkbox">Полиция</li>
-            <li><input type="checkbox">Приключения</li>
-            <li><input type="checkbox">Психологическое</li>
-            <li><input type="checkbox">Работа</li>
-            <li><input type="checkbox">Самураи</li>
-            <li><input type="checkbox">Сверхъестественное</li>
-            <li><input type="checkbox">Спорт</li>
-            <li><input type="checkbox">Супер сила</li>
-            <li><input type="checkbox">Ужасы</li>
-            <li><input type="checkbox">Фантастика</li>
-            <li><input type="checkbox">Фэнтези</li>
-            <li><input type="checkbox">Экшен</li>
-            <li><input type="checkbox">Этти</li>
-            <li class="indent_between"><input type="checkbox">Триллер</li>
-            <li><input type="checkbox">Эротика</li>
-            <li><input type="checkbox">Хентай</li>
-            <li><input type="checkbox">Яой</li>
-            <li><input type="checkbox">Юри</li>
+            <li><label for="genre1"><input type="checkbox" id="genre1">Сёнен</label></li>
+            <li><label for="genre2"><input type="checkbox" id="genre2">Сёнен-ай</label></li>
+            <li class="indent_between"><label for="genre3"><input type="checkbox" id="genre3">Сэйнэн</label></li>
+            <li><label for="genre4"><input type="checkbox" id="genre4">Сёдзё</label></li>
+            <li><label for="genre5"><input type="checkbox" id="genre5">Сёдзё-ай</label></li>
+            <li class="indent_between"><label for="genre6"><input type="checkbox" id="genre6">Дзёсей</label></li>
+            <li><label for="genre7"><input type="checkbox" id="genre7">Комедия</label></li>
+            <li><label for="genre8"><input type="checkbox" id="genre8">Романтика</label></li>
+            <li class="indent_between"><label for="genre9"><input type="checkbox" id="genre9">Школа</label></li>
+            <li><label for="genre10"><input type="checkbox" id="genre10">Безумие</label></li>
+            <li><label for="genre11"><input type="checkbox" id="genre11">Боевые искусства</label></li>
+            <li><label for="genre12"><input type="checkbox" id="genre12">Вампиры</label></li>
+            <li><label for="genre13"><input type="checkbox" id="genre13">Военное</label></li>
+            <li><label for="genre14"><input type="checkbox" id="genre14">Гарем</label></li>
+            <li><label for="genre15"><input type="checkbox" id="genre15">Гурман</label></li>
+            <li><label for="genre16"><input type="checkbox" id="genre16">Демоны</label></li>
+            <li><label for="genre17"><input type="checkbox" id="genre17">Детектив</label></li>
+            <li><label for="genre18"><input type="checkbox" id="genre18">Детское</label></li>
+            <li><label for="genre19"><input type="checkbox" id="genre19">Драма</label></li>
+            <li><label for="genre20"><input type="checkbox" id="genre20">Игры</label></li>
+            <li><label for="genre21"><input type="checkbox" id="genre21">Исторический</label></li>
+            <li><label for="genre22"><input type="checkbox" id="genre22">Космос</label></li>
+            <li><label for="genre23"><input type="checkbox" id="genre23">Магия</label></li>
+            <li><label for="genre24"><input type="checkbox" id="genre24">Машины</label></li>
+            <li><label for="genre25"><input type="checkbox" id="genre25">Меха</label></li>
+            <li><label for="genre26"><input type="checkbox" id="genre26">Музыка</label></li>
+            <li><label for="genre27"><input type="checkbox" id="genre27">Пародия</label></li>
+            <li><label for="genre28"><input type="checkbox" id="genre28">Повседневность</label></li>
+            <li><label for="genre29"><input type="checkbox" id="genre29">Полиция</label></li>
+            <li><label for="genre30"><input type="checkbox" id="genre30">Приключения</label></li>
+            <li><label for="genre31"><input type="checkbox" id="genre31">Психологическое</label></li>
+            <li><label for="genre32"><input type="checkbox" id="genre32">Работа</label></li>
+            <li><label for="genre33"><input type="checkbox" id="genre33">Самураи</label></li>
+            <li><label for="genre34"><input type="checkbox" id="genre34">Сверхъестественное</label></li>
+            <li><label for="genre35"><input type="checkbox" id="genre35">Спорт</label></li>
+            <li><label for="genre36"><input type="checkbox" id="genre36">Супер сила</label></li>
+            <li><label for="genre37"><input type="checkbox" id="genre37">Ужасы</label></li>
+            <li><label for="genre38"><input type="checkbox" id="genre38">Фантастика</label></li>
+            <li><label for="genre39"><input type="checkbox" id="genre39">Фэнтези</label></li>
+            <li><label for="genre40"><input type="checkbox" id="genre40">Экшен</label></li>
+            <li><label for="genre41"><input type="checkbox" id="genre41">Этти</label></li>
+            <li class="indent_between"><label for="genre42"><input type="checkbox" id="genre42">Триллер</label></li>
+            <li><label for="genre43"><input type="checkbox" id="genre43">Эротика</label></li>
+            <li><label for="genre44"><input type="checkbox" id="genre44">Хентай</label></li>
+            <li><label for="genre45"><input type="checkbox" id="genre45">Яой</label></li>
+            <li><label for="genre46"><input type="checkbox" id="genre46">Юри</label></li>
           </ul>
         </details>
       </div>
