@@ -1,0 +1,59 @@
+a {
+  text-decoration: none;
+}
+
+.card-poster {
+  position: absolute;
+  width: 345px;
+  height: 350px;
+  border: 1px solid black;
+  background-color: rgb(218, 216, 216);
+}
+
+.card-poster__block {
+  width: 320px;
+  height: 300px;
+  margin: 10px 13px;
+}
+
+.card-poster__head {
+  height: 27px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  color: brown;
+}
+
+.card-poster__discription {
+  width: 320px;
+  max-height: 100px;
+  height: 100%;
+  margin-top: 10px;
+}
+
+.card-poster__info {
+  height: 200px;
+  line-height: 28px;
+}
+
+.type {
+  display: flex;
+  height: 32px;
+}
+
+.type__status {
+  width: auto;
+  padding: 0 7px;
+  margin-left: 7px;
+  text-align: center;
+  background-color: greenyellow;
+  color:aliceblue;
+}
+
+.card-poster__raiting {
+  width: 100px;
+  height: 30px;
+  margin-left: 220px;
+  margin-top: 10px;
+  text-align: center;
+}

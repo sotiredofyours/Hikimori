@@ -8,6 +8,7 @@ import { CardPosterComponent } from './card-poster/card-poster.component';
 import { CardsComponent } from './cards/cards.component';
 import { HeaderComponent } from './header/header.component';
 import {FormsModule} from "@angular/forms";
+import { PopUpCardComponent } from './pop-up-card/pop-up-card.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {FormsModule} from "@angular/forms";
     CardPosterComponent,
     CardsComponent,
     HeaderComponent,
+    PopUpCardComponent,
   ],
     imports: [
         BrowserModule,
