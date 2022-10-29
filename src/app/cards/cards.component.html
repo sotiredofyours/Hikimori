@@ -23,9 +23,12 @@
         <div class="main__container-navigation__block_title">Статус</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><label for="announce1"><input type="checkbox" id="announce1">Анонсировано</label></li>
-            <li><label for="announce2"><input type="checkbox" id="announce2">Сейчас выходит</label></li>
-            <li><label for="announce3"><input type="checkbox" id="announce3">Вышедшее</label></li>
+            <li><label for="announce1"><input type="checkbox" id="announce1"
+                                              (change)="isAnons=!isAnons; addFilters();" [checked]="isAnons">Анонсировано</label></li>
+            <li><label for="announce2"><input type="checkbox" id="announce2"
+                                              (change)="isOngoing=!isOngoing; addFilters();" [checked]="isOngoing">Сейчас выходит</label></li>
+            <li><label for="announce3"><input type="checkbox" id="announce3"
+                                              (change)="isReleased=!isReleased; addFilters();" [checked]="isReleased">Вышедшее</label></li>
           </ul>
         </div>
       </div>
@@ -33,17 +36,21 @@
         <div class="main__container-navigation__block_title">Тип</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><label for="kind1"><input type="checkbox" id="kind1">TV Сериал</label></li>
+            <li><label for="kind1"><input type="checkbox" id="kind1"
+                                          (change)="isTV=!isTV; addFilters();" [checked]="isTV">TV Сериал</label></li>
             <ul>
-              <li class="sublist"><label for="kind__series1"><input type="checkbox" id="kind__series1">Короткие</label></li>
-              <li class="sublist"><label for="kind__series2"><input type="checkbox" id="kind__series2">Средние</label></li>
-              <li class="sublist"><label for="kind__series3"><input type="checkbox" id="kind__series3">Длинные</label></li>
+              <li class="sublist"><label for="kind__series1"><input type="checkbox" id="kind__series1"
+                                                                    (change)="isTV13=!isTV13; addFilters();" [checked]="isTV13">Короткие</label></li>
+              <li class="sublist"><label for="kind__series2"><input type="checkbox" id="kind__series2"
+                                                                    (change)="isTV24=!isTV24; addFilters();" [checked]="isTV24">Средние</label></li>
+              <li class="sublist"><label for="kind__series3"><input type="checkbox" id="kind__series3"
+                                                                    (change)="isTV48=!isTV48; addFilters();" [checked]="isTV48">Длинные</label></li>
             </ul>
-            <li><label for="kind2"><input type="checkbox" id="kind2">Фильм</label></li>
-            <li><label for="kind3"><input type="checkbox" id="kind3">OVA</label></li>
-            <li><label for="kind4"><input type="checkbox" id="kind4">ONA</label></li>
-            <li><label for="kind5"><input type="checkbox" id="kind5">Спешл</label></li>
-            <li><label for="kind6"><input type="checkbox" id="kind6">Клип</label></li>
+            <li><label for="kind2"><input type="checkbox" id="kind2" (change)="isMovie=!isMovie; addFilters();" [checked]="isMovie">Фильм</label></li>
+            <li><label for="kind3"><input type="checkbox" id="kind3" (change)="isOva=!isOva; addFilters();" [checked]="isOva" >OVA</label></li>
+            <li><label for="kind4"><input type="checkbox" id="kind4" (change)="isOna=!isOna; addFilters();" [checked]="isOna">ONA</label></li>
+            <li><label for="kind5"><input type="checkbox" id="kind5" (change)="isSpecial=!isSpecial; addFilters();" [checked]="isSpecial">Спешл</label></li>
+            <li><label for="kind6"><input type="checkbox" id="kind6" (change)="isMusic=!isMusic" [checked]="isMusic">Клип</label></li>
           </ul>
         </div>
       </div>
