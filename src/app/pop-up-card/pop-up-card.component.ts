@@ -15,11 +15,12 @@ export class PopUpCardComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.getAnime();
-
+    console.log(this.anime)
   }
 
   async getAnime() {
-    await this.animeService.getAnimeById(Number(this.id)).subscribe(x=> this.anime = x);
+    await this.animeService.getAnimeById(Number(this.id)).subscribe(x=> {
+      this.anime = x});
   }
 
 }

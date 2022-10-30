@@ -20,7 +20,7 @@ export class PopUpDirective implements OnInit{
     const positionStrategy = this.overlayPositionBuilder
       .flexibleConnectedTo(this.elementRef)
       .withPositions([{
-        originX: 'center',
+        originX: 'end',
         originY: 'top',
         overlayX: 'center',
         overlayY: 'bottom',
@@ -28,14 +28,13 @@ export class PopUpDirective implements OnInit{
     this.overlayRef = this.overlay.create({positionStrategy});
   }
  private setConst:any;
-  @HostListener('mouseenter')
+  @HostListener('mouseover')
    show() {
     this.setConst = setTimeout(()=>{
       const tooltipPortal = new ComponentPortal(PopUpCardComponent);
       const tooltipRef: ComponentRef<PopUpCardComponent> = this.overlayRef.attach(tooltipPortal);
       tooltipRef.instance.id = this.id;
     }, 300)
-
   }
 
   @HostListener('mouseout')
