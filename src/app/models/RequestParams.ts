@@ -6,7 +6,7 @@ export interface RequestParams{
     kind?: string,
     status?: string,
     season?: string,
-    score?: number,
+    score?: string,
     duration?: string,
     rating?: string,
     consored?: boolean,

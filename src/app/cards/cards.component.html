@@ -46,11 +46,16 @@
               <li class="sublist"><label for="kind__series3"><input type="checkbox" id="kind__series3"
                                                                     (change)="isTV48=!isTV48; addFilters();" [checked]="isTV48">Длинные</label></li>
             </ul>
-            <li><label for="kind2"><input type="checkbox" id="kind2" (change)="isMovie=!isMovie; addFilters();" [checked]="isMovie">Фильм</label></li>
-            <li><label for="kind3"><input type="checkbox" id="kind3" (change)="isOva=!isOva; addFilters();" [checked]="isOva" >OVA</label></li>
-            <li><label for="kind4"><input type="checkbox" id="kind4" (change)="isOna=!isOna; addFilters();" [checked]="isOna">ONA</label></li>
-            <li><label for="kind5"><input type="checkbox" id="kind5" (change)="isSpecial=!isSpecial; addFilters();" [checked]="isSpecial">Спешл</label></li>
-            <li><label for="kind6"><input type="checkbox" id="kind6" (change)="isMusic=!isMusic" [checked]="isMusic">Клип</label></li>
+            <li><label for="kind2"><input type="checkbox" id="kind2"
+                                          (change)="isMovie=!isMovie; addFilters();" [checked]="isMovie">Фильм</label></li>
+            <li><label for="kind3"><input type="checkbox" id="kind3"
+                                          (change)="isOva=!isOva; addFilters();" [checked]="isOva" >OVA</label></li>
+            <li><label for="kind4"><input type="checkbox" id="kind4"
+                                          (change)="isOna=!isOna; addFilters();" [checked]="isOna">ONA</label></li>
+            <li><label for="kind5"><input type="checkbox" id="kind5"
+                                          (change)="isSpecial=!isSpecial; addFilters();" [checked]="isSpecial">Спешл</label></li>
+            <li><label for="kind6"><input type="checkbox" id="kind6"
+                                          (change)="isMusic=!isMusic; addFilters()" [checked]="isMusic">Клип</label></li>
           </ul>
         </div>
       </div>
@@ -71,9 +76,12 @@
         <div class="main__container-navigation__block_title">Оценка</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><label for="mark1"><input type="checkbox" id="mark1">8+</label></li>
-            <li><label for="mark2"><input type="checkbox" id="mark2">7+</label></li>
-            <li><label for="mark3"><input type="checkbox" id="mark3">6+</label></li>
+            <li><label for="mark1"><input type="checkbox" id="mark1"
+                                          (change)="isScore8 = !isScore8; addFilters()" [checked]="isScore8">8+</label></li>
+            <li><label for="mark2"><input type="checkbox" id="mark2"
+                                          (change)="isScore7 = !isScore7; addFilters()" [checked]="isScore7">7+</label></li>
+            <li><label for="mark3"><input type="checkbox" id="mark3"
+                                          (change)="isScore6 = !isScore6; addFilters()" [checked]="isScore6" >6+</label></li>
           </ul>
         </div>
       </div>
@@ -81,11 +89,16 @@
         <div class="main__container-navigation__block_title">Рейтинг</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><label for="rank1"><input type="checkbox" id="rank1">G</label></li>
-            <li><label for="rank2"><input type="checkbox" id="rank2">PG</label></li>
-            <li><label for="rank3"><input type="checkbox" id="rank3">R-17</label></li>
-            <li><label for="rank4"><input type="checkbox" id="rank4">R+</label></li>
-            <li><label for="rank5"><input type="checkbox" id="rank5">Rx</label></li>
+            <li><label for="rank1"><input type="checkbox" id="rank1"
+                                          (change)="isG = !isG; addFilters()" [checked]="isG">G</label></li>
+            <li><label for="rank2"><input type="checkbox" id="rank2"
+                                          (change)="isPG = !isPG; addFilters()" [checked]="isPG">PG</label></li>
+            <li><label for="rank3"><input type="checkbox" id="rank3"
+                                          (change)="isR17 = !isR17; addFilters()" [checked]="isR17">R-17</label></li>
+            <li><label for="rank4"><input type="checkbox" id="rank4"
+                                          (change)="isRPlus = !isRPlus; addFilters()" [checked]="isRPlus">R+</label></li>
+            <li><label for="rank5"><input type="checkbox" id="rank5"
+                                          (change)="isRx = !isRx; addFilters()" [checked]="isRx">Rx</label></li>
           </ul>
         </div>
       </div>

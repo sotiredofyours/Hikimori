@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AnimeFromList} from "../models/AnimeFromList";
 import {AnimeDataService} from "../services/ShikimoriAPI/anime-data.service";
-import {KindType, OrderType, StatusType} from "../models/AnimeTypes";
+import {KindType, OrderType, RatingType, StatusType} from "../models/AnimeTypes";
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {RequestParams} from "../models/RequestParams";
 
@@ -34,6 +34,23 @@ export class CardsComponent implements OnInit {
   isSpecial: boolean = false;
   isMusic: boolean = false;
 
+  isRatingOrder: boolean = false;
+  isPopularOrder: boolean = false;
+  isNameOrder: boolean = false;
+  isAiredOrder: boolean = false;
+  isRandomOrder: boolean = false;
+  isIdOrder: boolean = false;
+
+  isScore8: boolean = false;
+  isScore7: boolean = false;
+  isScore6: boolean = false;
+
+  isG: boolean = false;
+  isPG: boolean = false;
+  isR17: boolean = false;
+  isRPlus: boolean = false;
+  isRx: boolean = false;
+
   constructor(private animeDataService: AnimeDataService, private route: ActivatedRoute, private router: Router) {
   }
 
@@ -47,15 +64,14 @@ export class CardsComponent implements OnInit {
     })
   }
 
-  resetFilters():void {
-    let filters:string[] = [];
+  resetFilters(): void {
+    let filters: string[] = [];
     let keys = this.route.snapshot.paramMap.keys;
-      keys.map((str, index) =>{
-      if (index % 2 != 0 && index != keys.length){
+    keys.map((str, index) => {
+      if (index % 2 != 0 && index != keys.length) {
         filters.push(this.route.snapshot.paramMap.get(str)!);
       }
     });
-    console.log(filters);
     filters.map((statusType) => {
       switch (statusType) {
         case StatusType.anons:
@@ -69,7 +85,7 @@ export class CardsComponent implements OnInit {
           break;
       }
     });
-    filters.map((kindType) =>{
+    filters.map((kindType) => {
       switch (kindType) {
         case KindType.tv:
           this.isTV = true;
@@ -100,16 +116,50 @@ export class CardsComponent implements OnInit {
           break;
       }
     })
+    filters.map(scoreFilter => {
+      switch (scoreFilter) {
+        case '8':
+          this.isScore8 = true;
+          break;
+        case '7':
+          this.isScore7 = true;
+          break;
+        case '6':
+          this.isScore6 = true;
+          break;
+      }
+    })
+
+    filters.map(ratingFilter =>{
+      switch (ratingFilter){
+        case RatingType.g:
+          this.isG = true; break;
+        case RatingType.pg:
+          this.isPG = true; break;
+        case RatingType.r:
+          this.isR17 = true; break;
+        case RatingType.r_plus:
+          this.isRPlus = true; break;
+        case RatingType.rx:
+          this.isRx = true; break;
+      }
+    })
   }
 
   getParams(): RequestParams {
     let params: RequestParams = {limit: 50, order: OrderType.ranked}
     let filterType = this.route.snapshot.paramMap.keys;
-    filterType.map( (param, index) => {
-      if (index %2 == 0 && index!=filterType.length){
+    filterType.map((param, index) => {
+      if (index % 2 == 0 && index != filterType.length) {
         switch (this.route.snapshot.paramMap.get(param)) {
-          case 'kind': params.kind = this.getKindFilter().join(','); break;
-          case 'status': params.status = this.getStatusFilter().join(','); break;
+          case 'kind':
+            params.kind = this.getKindFilter().join(','); break;
+          case 'status':
+            params.status = this.getStatusFilter().join(','); break;
+          case 'score':
+            params.score = this.getScoreFilter().join(','); break;
+          case 'rating':
+            params.rating = this.getRatingFilter().join(','); break;
         }
       }
     });
@@ -126,10 +176,10 @@ export class CardsComponent implements OnInit {
       });
 
     params.page = params.page! + 1;
-    setTimeout(()=>this.animeDataService.getAnimeList(params)
+    setTimeout(() => this.animeDataService.getAnimeList(params)
       .subscribe({
         next: (data: AnimeFromList[]) => this.nextPage = data
-      }), 1000);
+      }), 2000);
   }
 
   pageUp(): void {
@@ -141,15 +191,15 @@ export class CardsComponent implements OnInit {
   }
 
   getStatusFilter(): StatusType[] {
-    let status:StatusType[] = [];
+    let status: StatusType[] = [];
     if (this.isAnons) status.push(StatusType.anons);
     if (this.isOngoing) status.push(StatusType.ongoing);
     if (this.isReleased) status.push(StatusType.released);
     return status;
   }
 
-  getKindFilter():KindType[]{
-    let kinds:KindType[] = [];
+  getKindFilter(): KindType[] {
+    let kinds: KindType[] = [];
     if (this.isTV) kinds.push(KindType.tv);
     if (this.isMovie) kinds.push(KindType.movie);
     if (this.isOva) kinds.push(KindType.ova);
@@ -162,14 +212,38 @@ export class CardsComponent implements OnInit {
     return kinds;
   }
 
-  addFilters():void{
+  getOrderFilter(): OrderType[] {
+    return [];
+  }
+
+  getScoreFilter(): string[] {
+    let ratingType: string[] = [];
+    if (this.isScore8) ratingType.push('8');
+    if (this.isScore7) ratingType.push('7');
+    if (this.isScore6) ratingType.push('6');
+    return ratingType;
+  }
+
+  getRatingFilter(): RatingType[] {
+    let ratingFilters = [];
+    if (this.isG) ratingFilters.push(RatingType.g);
+    if (this.isPG) ratingFilters.push(RatingType.pg);
+    if (this.isR17) ratingFilters.push(RatingType.r);
+    if (this.isRPlus) ratingFilters.push(RatingType.r_plus);
+    if (this.isRx) ratingFilters.push(RatingType.rx);
+    return ratingFilters;
+  }
+
+  addFilters(): void {
     let str = 'animes/';
     let status = this.getStatusFilter();
-    if (status.length!=0){
-      str = str.concat('status/',status.join(','),'/');
-    }
+    if (status.length != 0) str = str.concat('status/', status.join(','), '/');
     let kind = this.getKindFilter();
-    if (kind.length!=0) str = str.concat('kind/',kind.join(','),'/');
+    if (kind.length != 0) str = str.concat('kind/', kind.join(','), '/');
+    let score = this.getScoreFilter();
+    if (score.length != 0) str = str.concat('score/', score.join(','), '/');
+    let rating = this.getRatingFilter();
+    if (rating.length != 0) str = str.concat('rating/', rating.join(','), '/');
     str = str.concat('1');
     this.router.navigate([str]);
   }
