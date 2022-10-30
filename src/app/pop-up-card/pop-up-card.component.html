@@ -1,23 +1,22 @@
 <body>
-  <div class="card-poster">
+  <div class="card-poster" *ngIf="anime">
       <div class="card-poster__block">
-          <div class="card-poster__head">Стальной алхимик</div>
+          <div class="card-poster__head" *ngIf="anime.russian">{{anime.russian}}</div>
           <div class="card-poster__discription">
-              Ремейк одноименного аниме-сериала <a href="#">“Стальной алхимик”</a> 2003 года,
-              более строго следующий событиям, описанным в манге.<br>В этом мире существуют алхимики
+<!--             {{anime.description}}-->
           </div>
           <div class="card-poster__info">
               <div class="type">
-                  <div class="type__info">Тип: TV-сериал 2009 год R-17</div>
-                  <div class="type__status">вышло</div>
+                  <div class="type__info">{{anime.kind}} {{anime.rating}}</div>
+                  <div class="type__status">{{anime.status}}</div>
               </div>
-              <span>Студия: Bones</span><br>
-              <span>Эпизоды: 64</span><br>
-              <span>Жанры: Экшен Приключения Комедия Драма Фэнтези Сенен</span>
+              <span>{{anime.studios[0].filtred_name}}</span><br>
+              <span>{{anime.episodes}}</span><br>
+              <span></span>
           </div>
       </div>
       <div class="card-poster__raiting">
-          рейтинг 9.12
+          {{anime.score}}
       </div>
   </div>
 </body>

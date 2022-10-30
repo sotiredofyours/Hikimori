@@ -1,4 +1,5 @@
-import { RatingType } from "./AnimeTypes";
+
+import {StudioInfo} from "./StudioInfo";
 
 export interface AnimeInfo {
     id: number,
@@ -12,11 +13,14 @@ export interface AnimeInfo {
     episodesAired: number,
     aired_on: Date,
     released_on: Date,
-    rating: RatingType,
+    rating: string,
     english: string[],
     japanese: string[],
     synonyms: string[],
     duration: number,
     description: string,
-    ongoing: boolean
+    description_source: string,
+    ongoing: boolean,
+    studios: StudioInfo[],
+    genres: string[],
 }

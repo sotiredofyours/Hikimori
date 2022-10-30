@@ -15,7 +15,7 @@
   <div class="main__container">
     <div class="main__container-primary">
       <div class="main__item" *ngFor="let anime of animes">
-        <app-card-poster [anime]="anime"></app-card-poster>
+        <app-card-poster [anime]="anime" [PopUp]="anime.id.toString()"></app-card-poster>
       </div>
     </div>
     <div class="main__container-navigation">
@@ -63,12 +63,12 @@
         <div class="main__container-navigation__block_title">Сортировка</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><a href="#">По рейтингу</a></li>
-            <li><a href="#">По популярности</a></li>
-            <li><a href="#">По алфавиту</a></li>
-            <li><a href="#">По дате выхода</a></li>
-            <li><a href="#">Случайно</a></li>
-            <li><a href="#">По ID</a></li>
+            <li><label for="sort1"><input type="radio" id="sort1" name="radioSort">По рейтингу</label></li>
+            <li><label for="sort2"><input type="radio" id="sort2" name="radioSort">По популярности</label></li>
+            <li><label for="sort3"><input type="radio" id="sort3" name="radioSort">По алфавиту</label></li>
+            <li><label for="sort4"><input type="radio" id="sort4" name="radioSort">По дате выхода</label></li>
+            <li><label for="sort5"><input type="radio" id="sort5" name="radioSort">Случайно</label></li>
+            <li><label for="sort6"><input type="radio" id="sort6" name="radioSort">По ID</label></li>
           </ul>
         </div>
       </div>

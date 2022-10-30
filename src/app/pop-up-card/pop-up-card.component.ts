@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {AnimeDataService} from "../services/ShikimoriAPI/anime-data.service";
+import {AnimeInfo} from "../models/AnimeInfo";
 
 @Component({
   selector: 'app-pop-up-card',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopUpCardComponent implements OnInit {
 
-  constructor() { }
+  @Input('id') id = '';
+  anime!:AnimeInfo;
+  constructor(private animeService:AnimeDataService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    await this.getAnime();
+
+  }
+
+  async getAnime() {
+    await this.animeService.getAnimeById(Number(this.id)).subscribe(x=> this.anime = x);
   }
 
 }

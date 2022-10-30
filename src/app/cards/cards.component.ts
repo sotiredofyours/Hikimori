@@ -23,7 +23,6 @@ export class CardsComponent implements OnInit {
   isAnons: boolean = false;
   isOngoing: boolean = false;
   isReleased: boolean = false;
-
   isTV: boolean = false;
   isTV13: boolean = false;
   isTV24: boolean = false;
@@ -33,18 +32,15 @@ export class CardsComponent implements OnInit {
   isOna: boolean = false;
   isSpecial: boolean = false;
   isMusic: boolean = false;
-
   isRatingOrder: boolean = false;
   isPopularOrder: boolean = false;
   isNameOrder: boolean = false;
   isAiredOrder: boolean = false;
   isRandomOrder: boolean = false;
   isIdOrder: boolean = false;
-
   isScore8: boolean = false;
   isScore7: boolean = false;
   isScore6: boolean = false;
-
   isG: boolean = false;
   isPG: boolean = false;
   isPG13: boolean = false;
@@ -76,58 +72,43 @@ export class CardsComponent implements OnInit {
     filters.map((statusType) => {
       switch (statusType) {
         case StatusType.anons:
-          this.isAnons = true;
-          break;
+          this.isAnons = true; break;
         case StatusType.ongoing:
-          this.isOngoing = true;
-          break;
+          this.isOngoing = true; break;
         case StatusType.released:
-          this.isReleased = true;
-          break;
+          this.isReleased = true; break;
       }
     });
     filters.map((kindType) => {
       switch (kindType) {
         case KindType.tv:
-          this.isTV = true;
-          break;
+          this.isTV = true; break;
         case KindType.movie:
-          this.isMovie = true;
-          break;
+          this.isMovie = true; break;
         case KindType.ova:
-          this.isOva = true;
-          break;
+          this.isOva = true; break;
         case KindType.ona:
-          this.isOna = true;
-          break;
+          this.isOna = true; break;
         case KindType.special:
-          this.isSpecial = true;
-          break;
+          this.isSpecial = true; break;
         case KindType.music:
-          this.isMusic = true;
-          break;
+          this.isMusic = true; break;
         case KindType.tv_13:
-          this.isTV13 = true;
-          break;
+          this.isTV13 = true; break;
         case KindType.tv_24:
-          this.isTV24 = true;
-          break;
+          this.isTV24 = true; break;
         case KindType.tv_48:
-          this.isTV48 = true;
-          break;
+          this.isTV48 = true; break;
       }
     })
     filters.map(scoreFilter => {
       switch (scoreFilter) {
         case '8':
-          this.isScore8 = true;
-          break;
+          this.isScore8 = true;break;
         case '7':
-          this.isScore7 = true;
-          break;
+          this.isScore7 = true;break;
         case '6':
-          this.isScore6 = true;
-          break;
+          this.isScore6 = true;break;
       }
     })
 
