@@ -19,7 +19,7 @@ export interface AnimeInfo {
     synonyms: string[],
     duration: number,
     description: string,
-    description_source: string,
+    description_html: string,
     ongoing: boolean,
     studios: StudioInfo[],
     genres: string[],
