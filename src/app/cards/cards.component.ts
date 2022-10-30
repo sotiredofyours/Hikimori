@@ -47,6 +47,7 @@ export class CardsComponent implements OnInit {
 
   isG: boolean = false;
   isPG: boolean = false;
+  isPG13: boolean = false;
   isR17: boolean = false;
   isRPlus: boolean = false;
   isRx: boolean = false;
@@ -136,6 +137,8 @@ export class CardsComponent implements OnInit {
           this.isG = true; break;
         case RatingType.pg:
           this.isPG = true; break;
+        case RatingType.pg_13:
+          this.isPG13 = true; break;
         case RatingType.r:
           this.isR17 = true; break;
         case RatingType.r_plus:
@@ -228,6 +231,7 @@ export class CardsComponent implements OnInit {
     let ratingFilters = [];
     if (this.isG) ratingFilters.push(RatingType.g);
     if (this.isPG) ratingFilters.push(RatingType.pg);
+    if (this.isPG13) ratingFilters.push(RatingType.pg_13);
     if (this.isR17) ratingFilters.push(RatingType.r);
     if (this.isRPlus) ratingFilters.push(RatingType.r_plus);
     if (this.isRx) ratingFilters.push(RatingType.rx);
