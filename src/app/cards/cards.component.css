@@ -27,8 +27,7 @@
 .main__item {
   display: inline-block;
 }
-/*TODO: задать определенную высоту навигации под содержимое,
- подогнать закругления этого блока*/
+
 .main__container-navigation {
   width: 300px;
   height: 3000px;
