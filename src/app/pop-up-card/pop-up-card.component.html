@@ -6,17 +6,24 @@
                   {{description}}
           </div>
           <div class="card-poster__info">
-              <div class="type">
-                  <div class="type__info">{{anime.kind}} {{anime.rating}}</div>
-                  <div class="type__status">{{anime.status}}</div>
+              <div class="card-poster__info__line">
+                  <div class="card-poster__info__line__name">Тип:</div>
+                  <div>{{anime.kind}}</div>
+                  <div>{{anime.rating}}</div>
+                  <div class="card-poster__info__line__status">{{anime.status}}</div>
               </div>
-              <span>{{anime.studios[0].name}}</span><br>
-              <span>{{anime.episodes}}</span><br>
-              <span></span>
+              <div class="card-poster__info__line">
+                <div class="card-poster__info__line__name">Студия:</div>
+                <div>{{anime.studios[0].name}}</div>
+              </div>
+              <div class="card-poster__info__line">
+                <div class="card-poster__info__line__name">Эпизоды:</div>
+                <div>{{anime.episodes}}</div>
+              </div>
           </div>
       </div>
       <div class="card-poster__raiting">
-          {{anime.score}}
+        рейтинг <span class="card-poster__raiting__big_raiting">{{anime.score}}</span>
       </div>
   </div>
 </body>
