@@ -5,7 +5,7 @@ a {
 .card-poster {
   position: absolute;
   width: 345px;
-  height: 350px;
+  height: auto;
   border: 1px solid rgb(161, 161, 161);
   background-color: rgb(255, 255, 255);
 }
@@ -26,7 +26,8 @@ a {
 
 .card-poster__block {
   width: 320px;
-  height: 300px;
+
+  height: auto;
   margin: 10px 13px;
 }
 
@@ -40,25 +41,28 @@ a {
 .card-poster__discription {
   font-size: small;
   width: 320px;
-  max-height: 130px;
-  height: 100%;
   margin-top: 10px;
   line-height: 22px;
   overflow: hidden;
+  -webkit-line-clamp: 6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
   /*text-overflow: ellipsis;
+  max-height: 130px;
+  height: 100%;
   white-space: normal;*/
 }
 
 .card-poster__info {
   margin-top: 10px;
-  height: 200px;
+  height: auto;
   line-height: 28px;
   font-size: small;
 }
 
 .card-poster__info__line {
   display: flex;
-  height: 32px;
+  height: auto;
 }
 
 .card-poster__info__line div {
@@ -80,12 +84,11 @@ a {
 
 .card-poster__raiting {
   width: 150px;
-  height: 30px;
-  margin-left: 190px;
-  margin-top: -20px;
+  margin-left: 170px;
   font-size: 14px;
   font-weight: bold;
   text-align: center;
+  line-height: 40px;
 }
 
 .card-poster__raiting__big_raiting {
