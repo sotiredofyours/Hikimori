@@ -6,6 +6,7 @@ a {
   position: absolute;
   width: 345px;
   height: auto;
+  border-radius: 5%;
   border: 1px solid rgb(161, 161, 161);
   background-color: rgb(255, 255, 255);
 }
