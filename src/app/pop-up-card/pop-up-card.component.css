@@ -1,0 +1,97 @@
+a {
+  text-decoration: none;
+}
+
+.card-poster {
+  position: absolute;
+  width: 345px;
+  height: auto;
+  border-radius: 5%;
+  border: 1px solid rgb(161, 161, 161);
+  background-color: rgb(255, 255, 255);
+}
+
+.card-poster::before, .card-poster::after {
+  content: '';
+  position: absolute;
+  left: -50px;
+  top: 20px;
+  border: 20px solid transparent;
+  border-right: 30px solid rgb(161, 161, 161);
+}
+
+.card-poster::after {
+  border-right: 30px solid white;
+  left: -49px;
+}
+
+.card-poster__block {
+  width: 320px;
+
+  height: auto;
+  margin: 10px 13px;
+}
+
+.card-poster__head {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: brown;
+}
+
+.card-poster__discription {
+  font-size: small;
+  width: 320px;
+  margin-top: 10px;
+  line-height: 22px;
+  overflow: hidden;
+  -webkit-line-clamp: 6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /*text-overflow: ellipsis;
+  max-height: 130px;
+  height: 100%;
+  white-space: normal;*/
+}
+
+.card-poster__info {
+  margin-top: 10px;
+  height: auto;
+  line-height: 28px;
+  font-size: small;
+}
+
+.card-poster__info__line {
+  display: flex;
+  height: auto;
+}
+
+.card-poster__info__line div {
+  margin-right: 10px;
+}
+
+.card-poster__info__line__name {
+  font-weight: bold;
+}
+
+.card-poster__info__line__status {
+  width: auto;
+  padding: 0 7px;
+  margin-left: 10px;
+  text-align: center;
+  background-color: greenyellow;
+  color:aliceblue;
+}
+
+.card-poster__raiting {
+  width: 150px;
+  margin-left: 170px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+}
+
+.card-poster__raiting__big_raiting {
+  font-size: 30px;
+}

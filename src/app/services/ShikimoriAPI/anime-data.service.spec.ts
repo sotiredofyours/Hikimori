@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed,waitForAsync } from '@angular/core/testing';
-import { durationType, KindType } from 'src/app/models/AnimeTypes';
+import { DurationType, KindType } from 'src/app/models/AnimeTypes';
 import { AnimeDataService } from './anime-data.service';
 
 describe('AnimeListService', () => {
@@ -26,7 +26,7 @@ describe('AnimeListService', () => {
     service.getAnimeList({ score: 8.0 }).subscribe(animeList => {
       animeList.map((anime) => expect(anime.score >= "8.0").toBeTrue());
     });
-    
+
   }));
 
   it('SHIKIMORI API - should return animes with kind tv', waitForAsync(() => {
@@ -36,7 +36,7 @@ describe('AnimeListService', () => {
   }));
 
   it('SHIKIMORI API - should return animes with duration S', waitForAsync(() => {
-    service.getAnimeList({duration:durationType.S, limit: 3}).subscribe(animeList => {
+    service.getAnimeList({duration:DurationType.S, limit: 3}).subscribe(animeList => {
       animeList.map((anime) => service.getAnimeById(anime.id).subscribe( (a) => expect(a.duration <= 10).toBeTrue()))
    });
   }));

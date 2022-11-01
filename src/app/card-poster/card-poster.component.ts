@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { withDisabledInitialNavigation } from '@angular/router';
 import { AnimeFromList } from '../models/AnimeFromList';
 import { KindType } from '../models/AnimeTypes';
 
@@ -18,17 +17,17 @@ export class CardPosterComponent implements OnInit {
 
   ngOnInit(): void {
     this.date = new Date(this.anime.aired_on);
-    if (
-      this.anime.kind == KindType.tv ||
-      this.anime.kind == KindType.tv_13 ||
-      this.anime.kind == KindType.tv_24 ||
-      this.anime.kind == KindType.tv_48
-    )
-      this.type = 'TV Сериал';
-    else {
-      this.type = this.anime.kind.toString();
+    switch (this.anime.kind) {
+      case KindType.tv:
+      case KindType.tv_13:
+      case KindType.tv_24:
+      case KindType.tv_48: this.type = 'TV Сериал'; break;
+      case KindType.movie: this.type = 'Фильм'; break;
+      case KindType.ova: this.type = 'OVA'; break;
+      case KindType.ona: this.type = 'ONA'; break;
+      case KindType.special: this.type = 'Спешл'; break;
+      case KindType.music: this.type = 'Клип'; break;
     }
-    if (this.anime.kind == KindType.movie) this.type = 'Фильм';
     if (this.anime.russian) this.name = this.anime.russian;
     else this.name = this.anime.name;
   }

@@ -1,39 +1,169 @@
 <div class="main">
-    <div class="main__head">Лучшие аниме</div>
-    <div class="main__head_info">На данной странице отобраны лучшие аниме, отсортированные по рейтингу</div>
-    <div class="main__page-movements">
-        <button class="main__page-movements_back" (click)="pageDown()">&larr; Назад</button>
-        <div>Страницы {{page}} из 1878 </div> <!--Здесь номера страниц будут меняться-->
-        <button class="main__page-movements_forward" (click)="pageUp()">Вперед &rarr;</button>
+  <div class="main__head">{{titleName}}</div>
+  <div class="main__head_info">
+    На данной странице отобраны лучшие аниме, отсортированные по рейтингу
+  </div>
+  <div class="main__page-movements">
+    <button class="main__page-movements_back" (click)="pageDown()" [disabled]="this.page===1">
+      &larr; Назад
+    </button>
+    <div>Страница {{ this.page }}</div>
+    <button class="main__page-movements_forward" (click)="pageUp()" [disabled]="nextPage.length===0">
+      Вперед &rarr;
+    </button>
+  </div>
+  <div class="main__container">
+    <div class="main__container-primary">
+      <div class="main__item" *ngFor="let anime of animes">
+        <app-card-poster [anime]="anime" [PopUp]="anime.id.toString()"></app-card-poster>
+      </div>
     </div>
-    <div class="main__container">
-        <div class="main__container-primary">
-            <div class="main__item" *ngFor="let anime of animes">
-                <app-card-poster [anime]="anime"></app-card-poster>
-            </div>
+    <div class="main__container-navigation">
+      <div class="main__container-navigation__block">
+        <div class="main__container-navigation__block_title">Статус</div>
+        <div class="main__container-navigation__block_list">
+          <ul>
+            <li><label for="announce1"><input type="checkbox" id="announce1"
+                                              (change)="isAnons=!isAnons; addFilters();" [checked]="isAnons">Анонсировано</label></li>
+            <li><label for="announce2"><input type="checkbox" id="announce2"
+                                              (change)="isOngoing=!isOngoing; addFilters();" [checked]="isOngoing">Сейчас выходит</label></li>
+            <li><label for="announce3"><input type="checkbox" id="announce3"
+                                              (change)="isReleased=!isReleased; addFilters();" [checked]="isReleased">Вышедшее</label></li>
+          </ul>
         </div>
-        <div class="main__container-navigation">
-            <div class="main__container-navigation__block">
-                <div class="main__container-navigation__block_title">Рекомендации</div>
-                <div class="main__container-navigation__block_list">
-                    <ul>
-                        <li><a href="kk">Избранное</a></li>
-                        <li><a href="kk">От сообщества</a></li>
-                        <li><a href="kk">Персонализированные</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="main__container-navigation__block">
-                <div class="main__container-navigation__block_title">Статус</div>
-            <div class="main__container-navigation__block_list">
-                    <ul>
-                        <li><input type="checkbox">Анонсировано</li>
-                        <li><input type="checkbox">Сейчас выходит</li>
-                        <li><input type="checkbox">Вышедшее</li>
-                        <li><input type="checkbox">Недавно вышедшее</li>
-                    </ul>
-                </div>
-            </div>
+      </div>
+      <div class="main__container-navigation__block">
+        <div class="main__container-navigation__block_title">Тип</div>
+        <div class="main__container-navigation__block_list">
+          <ul>
+            <li><label for="kind1"><input type="checkbox" id="kind1"
+                                          (change)="isTV=!isTV; addFilters();" [checked]="isTV">TV Сериал</label></li>
+            <ul>
+              <li class="sublist"><label for="kind__series1"><input type="checkbox" id="kind__series1"
+                                                                    (change)="isTV13=!isTV13; addFilters();" [checked]="isTV13">Короткие</label></li>
+              <li class="sublist"><label for="kind__series2"><input type="checkbox" id="kind__series2"
+                                                                    (change)="isTV24=!isTV24; addFilters();" [checked]="isTV24">Средние</label></li>
+              <li class="sublist"><label for="kind__series3"><input type="checkbox" id="kind__series3"
+                                                                    (change)="isTV48=!isTV48; addFilters();" [checked]="isTV48">Длинные</label></li>
+            </ul>
+            <li><label for="kind2"><input type="checkbox" id="kind2"
+                                          (change)="isMovie=!isMovie; addFilters();" [checked]="isMovie">Фильм</label></li>
+            <li><label for="kind3"><input type="checkbox" id="kind3"
+                                          (change)="isOva=!isOva; addFilters();" [checked]="isOva" >OVA</label></li>
+            <li><label for="kind4"><input type="checkbox" id="kind4"
+                                          (change)="isOna=!isOna; addFilters();" [checked]="isOna">ONA</label></li>
+            <li><label for="kind5"><input type="checkbox" id="kind5"
+                                          (change)="isSpecial=!isSpecial; addFilters();" [checked]="isSpecial">Спешл</label></li>
+            <li><label for="kind6"><input type="checkbox" id="kind6"
+                                          (change)="isMusic=!isMusic; addFilters()" [checked]="isMusic">Клип</label></li>
+          </ul>
         </div>
+      </div>
+      <div class="main__container-navigation__block">
+        <div class="main__container-navigation__block_title">Сортировка</div>
+        <div class="main__container-navigation__block_list">
+          <ul>
+            <li><label for="sort1"><input type="radio" id="sort1" name="radioSort"
+                                          (change)="resetOrder();isRatingOrder = !isRatingOrder; addFilters()" [checked]="isRatingOrder">По рейтингу</label></li>
+            <li><label for="sort2"><input type="radio" id="sort2" name="radioSort"
+                                          (change)="resetOrder(); isPopularOrder = !isPopularOrder; addFilters()" [checked]="isPopularOrder">По популярности</label></li>
+            <li><label for="sort3"><input type="radio" id="sort3" name="radioSort"
+                                          (change)="resetOrder();isNameOrder = !isNameOrder; addFilters()" [checked]="isNameOrder">По алфавиту</label></li>
+            <li><label for="sort4"><input type="radio" id="sort4" name="radioSort"
+                                          (change)="resetOrder();isAiredOrder = !isAiredOrder; addFilters()" [checked]="isAiredOrder">По дате выхода</label></li>
+            <li><label for="sort5"><input type="radio" id="sort5" name="radioSort"
+                                          (change)="resetOrder();isRandomOrder = !isRandomOrder; addFilters()" [checked]="isRandomOrder">Случайно</label></li>
+            <li><label for="sort6"><input type="radio" id="sort6" name="radioSort"
+                                          (change)="resetOrder();isIdOrder = !isIdOrder; addFilters()" [checked]="isIdOrder">По ID</label></li>
+          </ul>
+        </div>
+      </div>
+      <div class="main__container-navigation__block">
+        <div class="main__container-navigation__block_title">Оценка</div>
+        <div class="main__container-navigation__block_list">
+          <ul>
+            <li><label for="mark1"><input type="checkbox" id="mark1"
+                                          (change)="isScore8 = !isScore8; addFilters()" [checked]="isScore8">8+</label></li>
+            <li><label for="mark2"><input type="checkbox" id="mark2"
+                                          (change)="isScore7 = !isScore7; addFilters()" [checked]="isScore7">7+</label></li>
+            <li><label for="mark3"><input type="checkbox" id="mark3"
+                                          (change)="isScore6 = !isScore6; addFilters()" [checked]="isScore6" >6+</label></li>
+          </ul>
+        </div>
+      </div>
+      <div class="main__container-navigation__block">
+        <div class="main__container-navigation__block_title">Рейтинг</div>
+        <div class="main__container-navigation__block_list">
+          <ul>
+            <li><label for="rank1"><input type="checkbox" id="rank1"
+                                          (change)="isG = !isG; addFilters()" [checked]="isG">G</label></li>
+            <li><label for="rank2"><input type="checkbox" id="rank2"
+                                          (change)="isPG = !isPG; addFilters()" [checked]="isPG">PG</label></li>
+            <li><label for="rank3"><input type="checkbox" id="rank6"
+                                          (change)="isPG13 = !isPG13; addFilters()" [checked]="isPG13">PG-13</label></li>
+            <li><label for="rank3"><input type="checkbox" id="rank3"
+                                          (change)="isR17 = !isR17; addFilters()" [checked]="isR17">R-17</label></li>
+            <li><label for="rank4"><input type="checkbox" id="rank4"
+                                          (change)="isRPlus = !isRPlus; addFilters()" [checked]="isRPlus">R+</label></li>
+            <li><label for="rank5"><input type="checkbox" id="rank5"
+                                          (change)="isRx = !isRx; addFilters()" [checked]="isRx">Rx</label></li>
+          </ul>
+        </div>
+      </div>
+      <div class="main__container-navigation__block">
+        <div class="main__container-navigation__block_title">Жанры</div>
+        <details class="main__container-navigation__block_list">
+          <summary class="genres">Показать жанры</summary>
+          <ul>
+            <li><label for="genre1"><input type="checkbox" id="genre1">Сёнен</label></li>
+            <li><label for="genre2"><input type="checkbox" id="genre2">Сёнен-ай</label></li>
+            <li class="indent_between"><label for="genre3"><input type="checkbox" id="genre3">Сэйнэн</label></li>
+            <li><label for="genre4"><input type="checkbox" id="genre4">Сёдзё</label></li>
+            <li><label for="genre5"><input type="checkbox" id="genre5">Сёдзё-ай</label></li>
+            <li class="indent_between"><label for="genre6"><input type="checkbox" id="genre6">Дзёсей</label></li>
+            <li><label for="genre7"><input type="checkbox" id="genre7">Комедия</label></li>
+            <li><label for="genre8"><input type="checkbox" id="genre8">Романтика</label></li>
+            <li class="indent_between"><label for="genre9"><input type="checkbox" id="genre9">Школа</label></li>
+            <li><label for="genre10"><input type="checkbox" id="genre10">Безумие</label></li>
+            <li><label for="genre11"><input type="checkbox" id="genre11">Боевые искусства</label></li>
+            <li><label for="genre12"><input type="checkbox" id="genre12">Вампиры</label></li>
+            <li><label for="genre13"><input type="checkbox" id="genre13">Военное</label></li>
+            <li><label for="genre14"><input type="checkbox" id="genre14">Гарем</label></li>
+            <li><label for="genre15"><input type="checkbox" id="genre15">Гурман</label></li>
+            <li><label for="genre16"><input type="checkbox" id="genre16">Демоны</label></li>
+            <li><label for="genre17"><input type="checkbox" id="genre17">Детектив</label></li>
+            <li><label for="genre18"><input type="checkbox" id="genre18">Детское</label></li>
+            <li><label for="genre19"><input type="checkbox" id="genre19">Драма</label></li>
+            <li><label for="genre20"><input type="checkbox" id="genre20">Игры</label></li>
+            <li><label for="genre21"><input type="checkbox" id="genre21">Исторический</label></li>
+            <li><label for="genre22"><input type="checkbox" id="genre22">Космос</label></li>
+            <li><label for="genre23"><input type="checkbox" id="genre23">Магия</label></li>
+            <li><label for="genre24"><input type="checkbox" id="genre24">Машины</label></li>
+            <li><label for="genre25"><input type="checkbox" id="genre25">Меха</label></li>
+            <li><label for="genre26"><input type="checkbox" id="genre26">Музыка</label></li>
+            <li><label for="genre27"><input type="checkbox" id="genre27">Пародия</label></li>
+            <li><label for="genre28"><input type="checkbox" id="genre28">Повседневность</label></li>
+            <li><label for="genre29"><input type="checkbox" id="genre29">Полиция</label></li>
+            <li><label for="genre30"><input type="checkbox" id="genre30">Приключения</label></li>
+            <li><label for="genre31"><input type="checkbox" id="genre31">Психологическое</label></li>
+            <li><label for="genre32"><input type="checkbox" id="genre32">Работа</label></li>
+            <li><label for="genre33"><input type="checkbox" id="genre33">Самураи</label></li>
+            <li><label for="genre34"><input type="checkbox" id="genre34">Сверхъестественное</label></li>
+            <li><label for="genre35"><input type="checkbox" id="genre35">Спорт</label></li>
+            <li><label for="genre36"><input type="checkbox" id="genre36">Супер сила</label></li>
+            <li><label for="genre37"><input type="checkbox" id="genre37">Ужасы</label></li>
+            <li><label for="genre38"><input type="checkbox" id="genre38">Фантастика</label></li>
+            <li><label for="genre39"><input type="checkbox" id="genre39">Фэнтези</label></li>
+            <li><label for="genre40"><input type="checkbox" id="genre40">Экшен</label></li>
+            <li><label for="genre41"><input type="checkbox" id="genre41">Этти</label></li>
+            <li class="indent_between"><label for="genre42"><input type="checkbox" id="genre42">Триллер</label></li>
+            <li><label for="genre43"><input type="checkbox" id="genre43">Эротика</label></li>
+            <li><label for="genre44"><input type="checkbox" id="genre44">Хентай</label></li>
+            <li><label for="genre45"><input type="checkbox" id="genre45">Яой</label></li>
+            <li><label for="genre46"><input type="checkbox" id="genre46">Юри</label></li>
+          </ul>
+        </details>
+      </div>
     </div>
+  </div>
 </div>
