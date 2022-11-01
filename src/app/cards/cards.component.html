@@ -63,12 +63,18 @@
         <div class="main__container-navigation__block_title">Сортировка</div>
         <div class="main__container-navigation__block_list">
           <ul>
-            <li><label for="sort1"><input type="radio" id="sort1" name="radioSort">По рейтингу</label></li>
-            <li><label for="sort2"><input type="radio" id="sort2" name="radioSort">По популярности</label></li>
-            <li><label for="sort3"><input type="radio" id="sort3" name="radioSort">По алфавиту</label></li>
-            <li><label for="sort4"><input type="radio" id="sort4" name="radioSort">По дате выхода</label></li>
-            <li><label for="sort5"><input type="radio" id="sort5" name="radioSort">Случайно</label></li>
-            <li><label for="sort6"><input type="radio" id="sort6" name="radioSort">По ID</label></li>
+            <li><label for="sort1"><input type="radio" id="sort1" name="radioSort"
+                                          (change)="resetOrder();isRatingOrder = !isRatingOrder; addFilters()" [checked]="isRatingOrder">По рейтингу</label></li>
+            <li><label for="sort2"><input type="radio" id="sort2" name="radioSort"
+                                          (change)="resetOrder(); isPopularOrder = !isPopularOrder; addFilters()" [checked]="isPopularOrder">По популярности</label></li>
+            <li><label for="sort3"><input type="radio" id="sort3" name="radioSort"
+                                          (change)="resetOrder();isNameOrder = !isNameOrder; addFilters()" [checked]="isNameOrder">По алфавиту</label></li>
+            <li><label for="sort4"><input type="radio" id="sort4" name="radioSort"
+                                          (change)="resetOrder();isAiredOrder = !isAiredOrder; addFilters()" [checked]="isAiredOrder">По дате выхода</label></li>
+            <li><label for="sort5"><input type="radio" id="sort5" name="radioSort"
+                                          (change)="resetOrder();isRandomOrder = !isRandomOrder; addFilters()" [checked]="isRandomOrder">Случайно</label></li>
+            <li><label for="sort6"><input type="radio" id="sort6" name="radioSort"
+                                          (change)="resetOrder();isIdOrder = !isIdOrder; addFilters()" [checked]="isIdOrder">По ID</label></li>
           </ul>
         </div>
       </div>

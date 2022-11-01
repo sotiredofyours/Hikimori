@@ -32,7 +32,7 @@ export class CardsComponent implements OnInit {
   isOna: boolean = false;
   isSpecial: boolean = false;
   isMusic: boolean = false;
-  isRatingOrder: boolean = false;
+  isRatingOrder: boolean = true;
   isPopularOrder: boolean = false;
   isNameOrder: boolean = false;
   isAiredOrder: boolean = false;
@@ -111,7 +111,6 @@ export class CardsComponent implements OnInit {
           this.isScore6 = true;break;
       }
     })
-
     filters.map(ratingFilter =>{
       switch (ratingFilter){
         case RatingType.g:
@@ -126,6 +125,22 @@ export class CardsComponent implements OnInit {
           this.isRPlus = true; break;
         case RatingType.rx:
           this.isRx = true; break;
+      }
+    })
+    filters.map((orderType) => {
+      switch (orderType) {
+        case OrderType.ranked:
+          this.isRatingOrder = true; break;
+        case OrderType.popularity:
+          this.isPopularOrder = true; break;
+        case OrderType.name:
+          this.isNameOrder = true; break;
+        case OrderType.airedOn:
+          this.isAiredOrder = true; break;
+        case OrderType.random:
+          this.isRandomOrder = true; break;
+        case OrderType.id:
+          this.isIdOrder = true; break;
       }
     })
   }
@@ -144,6 +159,8 @@ export class CardsComponent implements OnInit {
             params.score = this.getScoreFilter().join(','); break;
           case 'rating':
             params.rating = this.getRatingFilter().join(','); break;
+          case 'orderby':
+            params.order = this.getOrderFilter().toString(); break;
         }
       }
     });
@@ -167,11 +184,11 @@ export class CardsComponent implements OnInit {
   }
 
   pageUp(): void {
-    this.router.navigate(['/animes', ++this.page]);
+    this.addFilters(++this.page);
   }
 
   pageDown(): void {
-    this.router.navigate(['/animes', --this.page]);
+    this.addFilters(--this.page);
   }
 
   getStatusFilter(): StatusType[] {
@@ -196,8 +213,15 @@ export class CardsComponent implements OnInit {
     return kinds;
   }
 
-  getOrderFilter(): OrderType[] {
-    return [];
+  getOrderFilter(): OrderType {
+    console.log(this.isNameOrder)
+    if (this.isPopularOrder) return OrderType.popularity;
+    if (this.isNameOrder) return OrderType.name;
+    if (this.isAiredOrder) return OrderType.airedOn;
+    if (this.isRandomOrder) return OrderType.random;
+    if (this.isIdOrder) return OrderType.id;
+    if (this.isRatingOrder) return OrderType.ranked;
+    return OrderType.ranked;
   }
 
   getScoreFilter(): string[] {
@@ -219,7 +243,7 @@ export class CardsComponent implements OnInit {
     return ratingFilters;
   }
 
-  addFilters(): void {
+  addFilters(page?:number): void {
     let str = 'animes/';
     let status = this.getStatusFilter();
     if (status.length != 0) str = str.concat('status/', status.join(','), '/');
@@ -229,7 +253,19 @@ export class CardsComponent implements OnInit {
     if (score.length != 0) str = str.concat('score/', score.join(','), '/');
     let rating = this.getRatingFilter();
     if (rating.length != 0) str = str.concat('rating/', rating.join(','), '/');
-    str = str.concat('1');
+    let order = this.getOrderFilter();
+    str = str.concat('orderby/', order.toString(), '/');
+    if (page) str = str.concat(page.toString());
+    else str = str.concat('1');
     this.router.navigate([str]);
+  }
+
+  resetOrder():void{
+    this.isNameOrder = false;
+    this.isRandomOrder = false;
+    this.isIdOrder = false;
+    this.isPopularOrder = false;
+    this.isAiredOrder = false;
+    this.isRatingOrder = false;
   }
 }

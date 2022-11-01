@@ -34,7 +34,7 @@ export class PopUpDirective implements OnInit{
       const tooltipPortal = new ComponentPortal(PopUpCardComponent);
       const tooltipRef: ComponentRef<PopUpCardComponent> = this.overlayRef.attach(tooltipPortal);
       tooltipRef.instance.id = this.id;
-    }, 300)
+    }, 150)
   }
 
   @HostListener('mouseout')
