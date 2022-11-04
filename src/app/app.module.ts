@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
 import {PopUpCardComponent} from './pop-up-card/pop-up-card.component';
 import {OverlayModule} from "@angular/cdk/overlay";
 import { PopUpDirective } from './directives/pop-up.directive';
+import { PAnimeComponent } from './p-anime/p-anime.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PopUpDirective } from './directives/pop-up.directive';
     HeaderComponent,
     PopUpCardComponent,
     PopUpDirective,
+    PAnimeComponent,
   ],
   imports: [
     BrowserModule,
