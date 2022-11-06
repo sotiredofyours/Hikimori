@@ -11,6 +11,8 @@ import {PopUpCardComponent} from './pop-up-card/pop-up-card.component';
 import {OverlayModule} from "@angular/cdk/overlay";
 import { PopUpDirective } from './directives/pop-up.directive';
 import { PAnimeComponent } from './p-anime/p-anime.component';
+import { AnimeTypePipe } from './pipe/anime-type.pipe';
+import {NameTransformPipe, RatingTransformPipe} from './pipe/name-transform.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,9 @@ import { PAnimeComponent } from './p-anime/p-anime.component';
     PopUpCardComponent,
     PopUpDirective,
     PAnimeComponent,
+    AnimeTypePipe,
+    NameTransformPipe,
+    RatingTransformPipe
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,9 @@
 
 <div class="card">
     <img src="https://shikimori.one/system/animes/original/{{anime.id}}.jpg" alt="image">
-    <p class="card__name"><a routerLink="/anime/{{anime.id}}">{{name}}</a></p>
+    <p class="card__name"><a routerLink="/anime/{{anime.id}}">{{anime.russian | nameTranform: anime.name}}</a></p>
     <div class="card__kind-and-date">
-        <div class="card__kind-and-date__k">{{type}}</div>
+        <div class="card__kind-and-date__k">{{anime.kind | animeType}}</div>
         <div class="card__kind-and-date__d">{{date.getFullYear()}}</div>
     </div>
 </div>

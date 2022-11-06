@@ -1,15 +1,15 @@
 <body>
   <div class="card-poster" *ngIf="anime">
       <div class="card-poster__block">
-          <div class="card-poster__head" *ngIf="anime.russian">{{anime.russian}}</div>
+          <div class="card-poster__head">{{anime.russian | nameTranform:anime.name}}</div>
           <div class="card-poster__discription">
                   {{description}}
           </div>
           <div class="card-poster__info">
               <div class="card-poster__info__line">
                   <div class="card-poster__info__line__name">Тип:</div>
-                  <div>{{anime.kind}}</div>
-                  <div>{{anime.rating}}</div>
+                  <div>{{anime.kind | animeType}}</div>
+                  <div>{{anime.rating | ratingTranform}}</div>
                   <div class="card-poster__info__line__status">{{anime.status}}</div>
               </div>
               <div class="card-poster__info__line">

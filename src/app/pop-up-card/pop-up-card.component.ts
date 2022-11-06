@@ -15,12 +15,11 @@ export class PopUpCardComponent implements OnInit {
   constructor(private animeService:AnimeDataService) { }
 
   async ngOnInit(): Promise<void> {
-    await this.getAnime();
-
+    this.getAnime();
   }
 
-  async getAnime() {
-    await this.animeService.getAnimeById(Number(this.id)).subscribe(x=> {
+  getAnime() {
+    this.animeService.getAnimeById(Number(this.id)).subscribe(x=> {
       this.anime = x;
       this.description = x.description_html.replace(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g,'');
     });

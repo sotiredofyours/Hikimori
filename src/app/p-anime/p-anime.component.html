@@ -1,22 +1,22 @@
 <div class="title">
-    Стальной алхимик: Братство / Fullmetal Alchemist: Brotherhood
-    <div class="title__explanation">Аниме / Сериалы / Сёнен</div> 
+  {{anime.russian | nameTranform:anime.name}}
+    <div class="title__explanation">Аниме / Сериалы / Сёнен</div>
 </div>
 <div class="main-part">
     <div class="main-container">
         <div class="main-part__flex">
-            <img src="/assets/images/Anime-image.png" alt="poster-anime">
+            <img src="https://desu.shikimori.one/system/animes/original/{{anime.id}}.jpg" alt="poster-anime">
             <div class="main-part__basic-section">
                 <div class="main-part__basic-section__block">
                     <div class="main-part__basic-section__block_title">Информация</div>
                     <div class="main-part__basic-section__block_dis">
                         <div class="main-part__basic-section__block_dis_line">
                             <div class="main-part__basic-section__block_dis_line__name">Тип:</div>
-                            <div class="main-part__basic-section__block_dis_line__info">TV Сериал</div>
+                            <div class="main-part__basic-section__block_dis_line__info">{{anime.kind | animeType }}</div>
                         </div>
                         <div class="main-part__basic-section__block_dis_line">
                             <div class="main-part__basic-section__block_dis_line__name">Эпизоды:</div>
-                            <div class="main-part__basic-section__block_dis_line__info">64</div>
+                            <div class="main-part__basic-section__block_dis_line__info">{{anime.episodes}}</div>
                         </div>
                         <div class="main-part__basic-section__block_dis_line">
                             <div class="main-part__basic-section__block_dis_line__name">Длительность эпизода:</div>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="main-part__basic-section__block_dis_line">
                             <div class="main-part__basic-section__block_dis_line__name">Рейтинг:</div>
-                            <div class="main-part__basic-section__block_dis_line__info">R-17</div>
+                            <div class="main-part__basic-section__block_dis_line__info">{{anime.rating | ratingTranform}}</div>
                         </div>
                         <div class="main-part__basic-section__block_dis_line">
                             <div class="main-part__basic-section__block_dis_line__name">Лицензировано:</div>
@@ -61,19 +61,14 @@
                         <img src="/assets/images/studio.png" alt="studio">
                     </div>
                 </div>
-            </div> 
-        </div>  
+            </div>
+        </div>
         <div class="main-part__basic-section_discription">
             <div class="main-part__basic-section__block_title">Описание</div>
             <div class="main-part__basic-section__block_discription_info">
-                Ремейк одноимённого аниме-сериала «Стальной алхимик» 2003 года,
-                более строго следующий событиям, описанным в манге.<br><br>
-                В этом мире существуют алхимики — люди, владеющие искусством алхимии,
-                способностью манипулировать материей и преобразовывать вещество.
-                Все они ограничены основным Законом алхимии: нельзя алхимическим путём получить что-то,
-                не пожертвовав чем-то равноценным
+              {{description}}
             </div>
-        </div> 
+        </div>
         <div class="main-part__sec-info">
             <div class="main-part__sec-info__block">
                 <div class="main-part__sec-info__block_title">Связанное</div>
