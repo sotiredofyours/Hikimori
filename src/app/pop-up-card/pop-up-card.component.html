@@ -21,8 +21,9 @@
                 <div>{{anime.episodes}}</div>
               </div>
               <div class="card-poster__info__line">
+                <!--@TODO: Поправить жанры-->
                 <div class="card-poster__info__line__name">Жанры:</div>
-                <div>{{anime.episodes}}</div>
+                <div *ngFor="let x of anime.genres">{{x.russian + ' '}}</div>
               </div>
           </div>
           <div class="card-poster__raiting">

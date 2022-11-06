@@ -12,6 +12,8 @@ export class PAnimeComponent implements OnInit {
 
   anime!:AnimeInfo;
   description:string = '';
+  releseDate!:Date;
+  airedOnDate!:Date;
 
   constructor(private router:ActivatedRoute, private animeService:AnimeDataService) { }
 
@@ -24,6 +26,8 @@ export class PAnimeComponent implements OnInit {
     this.animeService.getAnimeById(id).subscribe(x => {
       this.anime = x;
       this.description = x.description_html.replace(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g, '');
+      this.releseDate = new Date(this.anime.released_on);
+      this.airedOnDate = new Date(this.anime.aired_on);
     });
   }
 }

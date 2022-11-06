@@ -1,5 +1,6 @@
 
 import {StudioInfo} from "./StudioInfo";
+import {AnimeGenre, Screenshot} from "./AnimeGenre";
 
 export interface AnimeInfo {
     id: number,
@@ -22,5 +23,7 @@ export interface AnimeInfo {
     description_html: string,
     ongoing: boolean,
     studios: StudioInfo[],
-    genres: string[],
+    genres: AnimeGenre[],
+    licensors: string[],
+    screenshots: Screenshot[]
 }
