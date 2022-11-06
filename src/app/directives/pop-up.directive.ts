@@ -2,6 +2,7 @@ import {ComponentRef, Directive, ElementRef, HostListener, Input, OnInit} from '
 import {Overlay, OverlayPositionBuilder, OverlayRef} from "@angular/cdk/overlay";
 import {ComponentPortal} from "@angular/cdk/portal";
 import {PopUpCardComponent} from "../pop-up-card/pop-up-card.component";
+import {NavigationEnd, Router} from "@angular/router";
 
 @Directive({
   selector: '[PopUp]'
@@ -13,7 +14,8 @@ export class PopUpDirective implements OnInit{
 
   constructor(private overlayPositionBuilder: OverlayPositionBuilder,
               private elementRef: ElementRef,
-              private overlay: Overlay) {
+              private overlay: Overlay,
+              private router:Router){
   }
 
   ngOnInit(): void {
@@ -26,6 +28,11 @@ export class PopUpDirective implements OnInit{
         overlayY: 'bottom',
       }]);
     this.overlayRef = this.overlay.create({positionStrategy});
+    this.router.events.subscribe(val => {
+      if (val instanceof NavigationEnd) {
+        this.hide();
+      }
+    })
   }
  private setConst:any;
   @HostListener('mouseover')
@@ -42,6 +49,8 @@ export class PopUpDirective implements OnInit{
     clearTimeout(this.setConst)
     this.overlayRef.detach();
   }
+
+
 
 }
 
