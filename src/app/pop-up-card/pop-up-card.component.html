@@ -25,7 +25,7 @@
               <div class="card-poster__info__line">
                 <!--@TODO: Поправить жанры-->
                 <div class="card-poster__info__line__name" *ngIf="anime.genres.length>0">Жанры:</div>
-                <div *ngFor="let x of anime.genres">{{x.russian + ' '}}</div>
+                <div class="card-poster__info__genre" *ngFor="let x of anime.genres">{{x.russian + ' '}}</div>
               </div>
           </div>
           <div class="card-poster__raiting" *ngIf="anime.status!='anons'">

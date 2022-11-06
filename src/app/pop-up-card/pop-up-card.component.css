@@ -108,3 +108,11 @@ a {
   background-color: greenyellow;
   color: #343535;
 }
+
+.card-poster__info__genre{
+  text-align: center;
+  background-color: rgb(169, 168, 172);
+  color:aliceblue;
+  border-radius: 10px;
+  padding: 2px 5px;
+}
