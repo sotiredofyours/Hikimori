@@ -12,7 +12,7 @@
 
 .main-part {
     display: flex;
-    margin-left: 207px; 
+    margin-left: 207px;
     margin-top: 15px;
 }
 
@@ -48,7 +48,7 @@
     text-transform: uppercase;
     background-color: rgb(161, 161, 161);
     margin-bottom: 5px;
-    border-radius: 10px; 
+    border-radius: 10px;
     padding: 4px 0;
 }
 
@@ -79,12 +79,24 @@
 
 .main-part__basic-section__block_dis_line__status {
     text-align: center;
-    background-color: greenyellow;
+
     color:aliceblue;
-    border-radius: 10px; 
+    border-radius: 10px;
     margin-right: 5px;
 }
 
+.anonsed{
+  background-color: #ef8d50;
+}
+
+.released{
+  background-color: #4f91e8;
+}
+
+.ongoing{
+  background-color: greenyellow;
+  color: #343535;
+}
 .main-part__basic-section__block_rating {
     display: flex;
     margin-bottom: 7px;
@@ -136,7 +148,7 @@
     text-transform: uppercase;
     background-color: rgb(161, 161, 161);
     margin-bottom: 5px;
-    border-radius: 10px; 
+    border-radius: 10px;
     padding: 4px 0;
 }
 
@@ -178,7 +190,7 @@
     text-align: center;
     background-color: rgb(169, 168, 172);
     color:aliceblue;
-    border-radius: 10px; 
+    border-radius: 10px;
     padding: 2px 5px;
 }
 
@@ -200,7 +212,7 @@
     text-transform: uppercase;
     background-color: rgb(161, 161, 161);
     margin-bottom: 5px;
-    border-radius: 10px; 
+    border-radius: 10px;
     padding: 4px 0;
 }
 
@@ -216,7 +228,7 @@
 
 .main-part__side-container__block_dis div{
     font-size: 14px;
-    border-radius: 10px; 
+    border-radius: 10px;
     margin-bottom: 7px;
 }
 
@@ -261,7 +273,7 @@
     text-transform: uppercase;
     background-color: rgb(161, 161, 161);
     margin-bottom: 10px;
-    border-radius: 10px; 
+    border-radius: 10px;
     padding: 4px 0;
 }
 

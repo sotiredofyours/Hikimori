@@ -95,3 +95,16 @@ a {
 .card-poster__raiting__big_raiting {
   font-size: 30px;
 }
+
+.anonsed{
+  background-color: #ef8d50;
+}
+
+.released{
+  background-color: #4f91e8;
+}
+
+.ongoing{
+  background-color: greenyellow;
+  color: #343535;
+}

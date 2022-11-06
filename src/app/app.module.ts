@@ -12,7 +12,12 @@ import {OverlayModule} from "@angular/cdk/overlay";
 import { PopUpDirective } from './directives/pop-up.directive';
 import { PAnimeComponent } from './p-anime/p-anime.component';
 import { AnimeTypePipe } from './pipes/anime-type.pipe';
-import {NameTransformPipe, RatingTransformPipe} from './pipes/name-transform.pipe';
+import {
+  DateTransformPipe, EpisodesTransformPipe,
+  NameTransformPipe,
+  RatingTransformPipe,
+  StatusTransformPipe
+} from './pipes/name-transform.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,10 @@ import {NameTransformPipe, RatingTransformPipe} from './pipes/name-transform.pip
     PAnimeComponent,
     AnimeTypePipe,
     NameTransformPipe,
-    RatingTransformPipe
+    RatingTransformPipe,
+    StatusTransformPipe,
+    DateTransformPipe,
+    EpisodesTransformPipe
   ],
   imports: [
     BrowserModule,

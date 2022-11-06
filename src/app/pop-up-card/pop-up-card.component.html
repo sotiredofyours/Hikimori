@@ -1,7 +1,7 @@
 <body>
   <div class="card-poster" *ngIf="anime">
       <div class="card-poster__block">
-          <div class="card-poster__head">{{anime.russian | nameTranform:anime.name}}</div>
+          <div class="card-poster__head">{{anime.name| nameTranform:anime.russian}}</div>
           <div class="card-poster__discription">
                   {{description}}
           </div>
@@ -10,23 +10,25 @@
                   <div class="card-poster__info__line__name">Тип:</div>
                   <div>{{anime.kind | animeType}}</div>
                   <div>{{anime.rating | ratingTranform}}</div>
-                  <div class="card-poster__info__line__status">{{anime.status}}</div>
+                  <div class="card-poster__info__line__status"
+                       [ngClass]="{'ongoing': anime.status == 'ongoing', 'anonsed': anime.status == 'anons', 'released': anime.status == 'released' }">
+                    {{anime.status | statusTranform}}</div>
               </div>
               <div class="card-poster__info__line">
-                <div class="card-poster__info__line__name">Студия:</div>
+                <div class="card-poster__info__line__name" *ngIf="anime.studios.length>0">Студия:</div>
                 <div>{{anime.studios[0].name}}</div>
               </div>
               <div class="card-poster__info__line">
                 <div class="card-poster__info__line__name">Эпизоды:</div>
-                <div>{{anime.episodes}}</div>
+                <div>{{anime.episodes | episodesTranform:anime.episodes_aired:anime.status}}</div>
               </div>
               <div class="card-poster__info__line">
                 <!--@TODO: Поправить жанры-->
-                <div class="card-poster__info__line__name">Жанры:</div>
+                <div class="card-poster__info__line__name" *ngIf="anime.genres.length>0">Жанры:</div>
                 <div *ngFor="let x of anime.genres">{{x.russian + ' '}}</div>
               </div>
           </div>
-          <div class="card-poster__raiting">
+          <div class="card-poster__raiting" *ngIf="anime.status!='anons'">
             рейтинг <span class="card-poster__raiting__big_raiting">{{anime.score}}</span>
           </div>
       </div>

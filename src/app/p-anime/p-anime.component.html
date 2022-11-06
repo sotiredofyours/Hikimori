@@ -1,6 +1,5 @@
-
 <div class="title">
-  {{anime.russian | nameTranform:anime.name}}
+  {{anime.name | nameTranform:anime.russian}}
     <div class="title__explanation">Аниме / Сериалы / Сёнен</div>
 </div>
 <!--@TODO: Закруглить постеры-->
@@ -18,7 +17,8 @@
                         </div>
                         <div class="main-part__basic-section__block_dis_line">
                             <div class="main-part__basic-section__block_dis_line__name">Эпизоды:</div>
-                            <div class="main-part__basic-section__block_dis_line__info">{{anime.episodes}}</div>
+                            <div class="main-part__basic-section__block_dis_line__info">
+                              {{anime.episodes | episodesTranform:anime.episodes_aired:anime.status}}</div>
                         </div>
                         <div class="main-part__basic-section__block_dis_line">
                             <div class="main-part__basic-section__block_dis_line__name">Длительность эпизода:</div>
@@ -26,8 +26,10 @@
                         </div>
                         <div class="main-part__basic-section__block_dis_line">
                             <div class="main-part__basic-section__block_dis_line__name">Статус:</div>
-                            <div class="main-part__basic-section__block_dis_line__status">{{anime.status}}</div>
-                            <div class="main-part__basic-section__block_dis_line__info">{{airedOnDate.getFullYear()}} - {{releseDate.getFullYear()}} гг.</div>
+                            <div class="main-part__basic-section__block_dis_line__status"
+                                 [ngClass]="{'ongoing': anime.status == 'ongoing', 'anonsed': anime.status == 'anons', 'released': anime.status == 'released' }">
+                              {{anime.status | statusTranform }}</div>
+                            <div class="main-part__basic-section__block_dis_line__info">{{anime.aired_on | dateTranform:anime.released_on}}</div>
                         </div>
                         <div class="main-part__basic-section__block_dis_line_name">
                             <div class="main-part__basic-section__block_dis_line__name">Жанры:
@@ -42,7 +44,7 @@
                             <div class="main-part__basic-section__block_dis_line__info">{{anime.licensors[0]}}</div>
                         </div>
                         <div class="main-part__basic-section__block_dis_line">
-                            <div class="main-part__basic-section__block_dis_line__name">Альтернативные названия:</div>
+                            <div class="main-part__basic-section__block_dis_line__name" *ngIf="anime.synonyms.length>0">Альтернативные названия:</div>
                             <div class="main-part__basic-section__block_dis_line__info">{{anime.synonyms.join(', ')}}</div>
                         </div>
                     </div>
@@ -60,7 +62,7 @@
                     <div class="rating-word">Великолепно</div>
                     <div class="main-part__basic-section__block_title">Студия</div>
                     <div class="main-part__basic-section__block_dis">
-                        <img src="/assets/images/studio.png" alt="studio">
+                        <img src="https://shikimori.one/{{anime.studios[0].image}}" alt="studio">
                     </div>
                 </div>
             </div>

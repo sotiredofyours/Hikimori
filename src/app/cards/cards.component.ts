@@ -214,7 +214,6 @@ export class CardsComponent implements OnInit {
   }
 
   getOrderFilter(): OrderType {
-    console.log(this.isNameOrder)
     if (this.isPopularOrder) return OrderType.popularity;
     if (this.isNameOrder) return OrderType.name;
     if (this.isAiredOrder) return OrderType.airedOn;

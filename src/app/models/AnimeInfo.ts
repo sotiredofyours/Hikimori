@@ -11,7 +11,7 @@ export interface AnimeInfo {
     score: string,
     status: string,
     episodes: number,
-    episodesAired: number,
+    episodes_aired: number,
     aired_on: Date,
     released_on: Date,
     rating: string,
