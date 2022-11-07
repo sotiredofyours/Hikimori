@@ -15,6 +15,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: rgb(153, 48, 148);
 }
 
 .card__name a {

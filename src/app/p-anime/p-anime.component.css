@@ -27,6 +27,7 @@
 .main-part__flex img {
     width: 225px;
     height: 346px;
+    border-radius: 10px;
 }
 
 .main-part__basic-section {
@@ -56,6 +57,7 @@
 .main-part__basic-section__block_dis {
     line-height: 28px;
     font-size: 14px;
+    margin-top: 15px;
 }
 
 .main-part__basic-section__block_dis img {
@@ -209,6 +211,7 @@
     background-color: rgb(153, 48, 148);
     color:aliceblue;
     border-radius: 10px;
+    margin-right: 5px;
     padding: 2px 5px;
 }
 

@@ -22,7 +22,7 @@ a {
 }
 
 .card-poster::after {
-  border-right: 30px solid white;
+  border-right: 30px solid #242424;
   left: -49px;
 }
 
@@ -117,7 +117,7 @@ a {
 
 .card-poster__info__genre{
   display: inline;
-  background-color: rgb(169, 168, 172);
+  background-color: rgb(153, 48, 148);
   color:aliceblue;
   border-radius: 10px;
   padding: 2px 5px;
