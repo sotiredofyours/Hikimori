@@ -85,6 +85,20 @@
     margin-right: 5px;
 }
 
+.alternative-name {
+  display: inline;
+
+}
+
+.main-part__basic-section__block_dis_line__info summary {
+  cursor: pointer;
+  display: block;
+
+}
+
+.main-part__basic-section__block_dis_line__info span:hover {
+  background-color: rgb(212, 212, 212);
+}
 .anonsed{
   background-color: #ef8d50;
 }
@@ -153,8 +167,11 @@
 }
 
 .main-part__sec-info__block_discription img {
+    width: 180px;
+    height: 101px;
     margin-top: 5px;
     margin: 5px 15px 1.5em;
+    border-radius: 5px;
 }
 
 .mini-poster {

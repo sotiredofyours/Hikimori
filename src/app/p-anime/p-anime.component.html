@@ -31,11 +31,9 @@
                               {{anime.status | statusTranform }}</div>
                             <div class="main-part__basic-section__block_dis_line__info">{{anime.aired_on | dateTranform:anime.released_on}}</div>
                         </div>
-                        <div class="main-part__basic-section__block_dis_line_name">
-                            <div class="main-part__basic-section__block_dis_line__name">Жанры:
-                                <span class="main-part__basic-section__block_dis_line__info mini-poster__info_dis_highlight"
-                                      *ngFor="let x of anime.genres">{{x.russian + ' '}}</span></div>
-                        </div>
+                        <div class="main-part__basic-section__block_dis_line__name">Жанры:
+                            <span class="main-part__basic-section__block_dis_line__info mini-poster__info_dis_highlight"
+                                  *ngFor="let x of anime.genres">{{x.russian + ' '}}</span></div>
                         <div class="main-part__basic-section__block_dis_line">
                             <div class="main-part__basic-section__block_dis_line__name">Рейтинг:</div>
                             <div class="main-part__basic-section__block_dis_line__info">{{anime.rating | ratingTranform}}</div>
@@ -44,9 +42,12 @@
                             <div class="main-part__basic-section__block_dis_line__name">Лицензировано:</div>
                             <div class="main-part__basic-section__block_dis_line__info">{{anime.licensors[0]}}</div>
                         </div>
-                        <div class="main-part__basic-section__block_dis_line">
-                            <div class="main-part__basic-section__block_dis_line__name" *ngIf="anime.synonyms.length>0">Альтернативные названия:</div>
-                            <div class="main-part__basic-section__block_dis_line__info">{{anime.synonyms.join(', ')}}</div>
+                        <div class="main-part__basic-section__block_dis_line alternative-name">
+                            <div class="main-part__basic-section__block_dis_line__name alternative-name" *ngIf="anime.synonyms.length>0">Альтернативные названия:</div>
+
+                            <details class="main-part__basic-section__block_dis_line__info alternative-name">{{anime.synonyms.join(', ')}}
+                              <summary><span>...</span></summary>
+                            </details>
                         </div>
                     </div>
                 </div>
@@ -118,8 +119,8 @@
             </div>
             <div class="main-part__sec-info__block">
                 <div class="main-part__sec-info__block_title">Кадры</div>
-                <div class="main-part__sec-info__block_discription" *ngFor="let x of anime.screenshots">
-                    <img src="https://shikimori.one/{{x.preview}}" alt="screenshot" >
+                <div class="main-part__sec-info__block_discription">
+                    <img src="https://shikimori.one/{{x.preview}}" alt="screenshot" *ngFor="let x of anime.screenshots">
                 </div>
                 <div class="main-part__sec-info__block_title">Видео</div>
                 <div class="main-part__sec-info__block_discription">
