@@ -1,5 +1,6 @@
 <body>
   <div class="card-poster" *ngIf="anime">
+    <!--TODO: статут сделать в обводке, а фон оставить такой же(фото в дс)-->
       <div class="card-poster__block">
           <div class="card-poster__head">{{anime.name| nameTranform:anime.russian}}</div>
           <div class="card-poster__discription">
@@ -22,9 +23,8 @@
                 <div class="card-poster__info__line__name">Эпизоды:</div>
                 <div>{{anime.episodes | episodesTranform:anime.episodes_aired:anime.status}}</div>
               </div>
-              <div class="card-poster__info__line">
-                <!--@TODO: Поправить жанры-->
-                <div class="card-poster__info__line__name" *ngIf="anime.genres.length>0">Жанры:</div>
+              <div class="card-poster__info__line block-inline">
+                <div class="card-poster__info__line__name block-inline" *ngIf="anime.genres.length>0">Жанры:</div>
                 <div class="card-poster__info__genre" *ngFor="let x of anime.genres">{{x.russian + ' '}}</div>
               </div>
           </div>

@@ -46,11 +46,12 @@
     line-height: 20px;
     text-align: center;
     text-transform: uppercase;
-    background-color: rgb(161, 161, 161);
+    background-color: rgb(153, 48, 148);
     margin-bottom: 5px;
     border-radius: 10px;
     padding: 4px 0;
 }
+
 
 .main-part__basic-section__block_dis {
     line-height: 28px;
@@ -58,10 +59,11 @@
 }
 
 .main-part__basic-section__block_dis img {
-    width: 199px;
-    height: 47px;
-    margin-top: 5px;
-    margin-left: 31px;
+    display: block;
+    height: auto;
+    width: auto;
+    max-width: 195px;
+    margin: 0 auto;
 }
 
 .main-part__basic-section__block_dis_line {
@@ -74,14 +76,13 @@
 }
 
 .main-part__basic-section__block_dis_line__info {
-    color: black;
+    color: white;
 }
 
 .main-part__basic-section__block_dis_line__status {
-    text-align: center;
-
+    padding: 0 4px;
     color:aliceblue;
-    border-radius: 10px;
+    border-radius: 7px;
     margin-right: 5px;
 }
 
@@ -160,7 +161,7 @@
     line-height: 20px;
     text-align: center;
     text-transform: uppercase;
-    background-color: rgb(161, 161, 161);
+    background-color: rgb(153, 48, 148);
     margin-bottom: 5px;
     border-radius: 10px;
     padding: 4px 0;
@@ -205,7 +206,7 @@
 
 .mini-poster__info_dis_highlight {
     text-align: center;
-    background-color: rgb(169, 168, 172);
+    background-color: rgb(153, 48, 148);
     color:aliceblue;
     border-radius: 10px;
     padding: 2px 5px;
@@ -227,7 +228,7 @@
     line-height: 20px;
     text-align: center;
     text-transform: uppercase;
-    background-color: rgb(161, 161, 161);
+    background-color: rgb(153, 48, 148);
     margin-bottom: 5px;
     border-radius: 10px;
     padding: 4px 0;
@@ -288,7 +289,7 @@
     line-height: 20px;
     text-align: center;
     text-transform: uppercase;
-    background-color: rgb(161, 161, 161);
+    background-color: rgb(153, 48, 148);
     margin-bottom: 10px;
     border-radius: 10px;
     padding: 4px 0;

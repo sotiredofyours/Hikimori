@@ -1,6 +1,8 @@
 
 <div class="card">
+    <a routerLink="/anime/{{anime.id}}">
     <img src="https://shikimori.one/system/animes/original/{{anime.id}}.jpg" alt="image">
+    </a>
     <p class="card__name"><a routerLink="/anime/{{anime.id}}">{{anime.name | nameTranform: anime.russian}}</a></p>
     <div class="card__kind-and-date">
         <div class="card__kind-and-date__k">{{anime.kind | animeType}}</div>

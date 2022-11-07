@@ -3,6 +3,8 @@
 
 body {
     font-family: 'Merriweather', serif;
+    color: white;
+    background-color: #242424;
 }
 
 html, body {
@@ -31,7 +33,8 @@ body::-webkit-scrollbar-track {
 }
 
 a {
-    color: brown;
+   /* color: rgb(124, 194, 10);*/
+   color: rgb(153, 48, 148);
 }
 
 ul {

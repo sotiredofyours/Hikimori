@@ -1,7 +1,8 @@
 .main {
   width: 1920px;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #242424;
+  color: white;
   overflow: auto;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -31,7 +32,7 @@
 .main__container-navigation {
   width: 300px;
   height: 3000px;
-  border-radius: 5%;
+  border-radius: 10px;
 }
 
 .main__container-navigation__block {
@@ -49,9 +50,9 @@
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
-  background-color: rgb(161, 161, 161);
+  background-color:rgb(153, 48, 148);
   margin-bottom: 5px;
-  border-radius: 8%;
+  border-radius: 10px;
   padding: 4px 0;
 }
 
@@ -72,7 +73,7 @@
 }
 
 .main__container-navigation__block_list ul li:hover {
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(153, 48, 148);
 }
 
 label {

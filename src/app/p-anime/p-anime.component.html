@@ -24,13 +24,12 @@
                             <div class="main-part__basic-section__block_dis_line__name">Длительность эпизода:</div>
                             <div class="main-part__basic-section__block_dis_line__info">24 мин</div>
                         </div>
-                        <div class="main-part__basic-section__block_dis_line">
-                            <div class="main-part__basic-section__block_dis_line__name">Статус:</div>
-                            <div class="main-part__basic-section__block_dis_line__status"
-                                 [ngClass]="{'ongoing': anime.status == 'ongoing', 'anonsed': anime.status == 'anons', 'released': anime.status == 'released' }">
-                              {{anime.status | statusTranform }}</div>
-                            <div class="main-part__basic-section__block_dis_line__info">{{anime.aired_on | dateTranform:anime.released_on}}</div>
-                        </div>
+                          <div class="main-part__basic-section__block_dis_line__name alternative-name">Статус:</div>
+                          <div class="main-part__basic-section__block_dis_line__status alternative-name"
+                                [ngClass]="{'ongoing': anime.status == 'ongoing', 'anonsed': anime.status == 'anons', 'released': anime.status == 'released' }">
+                            {{anime.status | statusTranform }}
+                          </div>
+                          <div class="main-part__basic-section__block_dis_line__info alternative-name">{{anime.aired_on | dateTranform:anime.released_on}}</div>
                         <div class="main-part__basic-section__block_dis_line__name">Жанры:
                             <span class="main-part__basic-section__block_dis_line__info mini-poster__info_dis_highlight"
                                   *ngFor="let x of anime.genres">{{x.russian + ' '}}</span></div>
@@ -51,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="main-part__basic-section__block">
+                <div class="main-part__basic-section__block ">
                     <div class="main-part__basic-section__block_title">Рейтинг</div>
                     <div class="main-part__basic-section__block_rating">
                         <img src="/assets/images/NHK.png" alt="nhk">
