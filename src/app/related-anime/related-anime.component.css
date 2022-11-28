@@ -1,0 +1,62 @@
+.main-part__sec-info__block {
+  width: 420px;
+  margin-right: 50px;
+}
+
+.main-part__sec-info__block_title {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: rgb(153, 48, 148);
+  margin-bottom: 5px;
+  border-radius: 10px;
+  padding: 4px 0;
+}
+
+.main-part__sec-info__block_discription img {
+  width: 180px;
+  height: 101px;
+  margin-top: 5px;
+  margin: 5px 15px 1.5em;
+  border-radius: 5px;
+}
+
+.mini-poster {
+  display: flex;
+}
+
+.mini-poster img {
+  width: 60px;
+  height: 90px;
+}
+
+.mini-poster__info {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+.mini-poster__info_title {
+  font-size: 14px;
+}
+
+.mini-poster__info_dis {
+  display: flex;
+  max-height: 20px;
+  line-height: 15px;
+}
+
+.mini-poster__info_dis div {
+  margin-right: 15px;
+}
+
+.mini-poster__info_dis_highlight {
+  text-align: center;
+  background-color: rgb(153, 48, 148);
+  color:aliceblue;
+  border-radius: 10px;
+  margin-right: 5px;
+  padding: 2px 5px;
+}

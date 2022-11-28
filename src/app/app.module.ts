@@ -18,6 +18,7 @@ import {
   RatingTransformPipe,
   StatusTransformPipe
 } from './pipes/name-transform.pipe';
+import { RelatedAnimeComponent } from './related-anime/related-anime.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {
     RatingTransformPipe,
     StatusTransformPipe,
     DateTransformPipe,
-    EpisodesTransformPipe
+    EpisodesTransformPipe,
+    RelatedAnimeComponent
   ],
   imports: [
     BrowserModule,
